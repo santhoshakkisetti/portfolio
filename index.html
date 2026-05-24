@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SanthoshAkkisetti - Portfolio</title>
+
+<title>Santhosh Akkisetti | Portfolio</title>
 
 <style>
 
@@ -14,12 +15,12 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+font-family:Arial, sans-serif;
 scroll-behavior:smooth;
 }
 
 /* =======================
-   BODY STYLING
+   BODY
 ======================= */
 body{
 background:#0f172a;
@@ -27,7 +28,7 @@ color:white;
 }
 
 /* =======================
-   NAVIGATION BAR
+   NAVBAR
 ======================= */
 nav{
 position:fixed;
@@ -36,16 +37,25 @@ width:100%;
 background:#111827;
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:15px 30px;
 z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.5);
 }
 
-nav h2{ color:#38bdf8; }
+nav h2{
+color:#38bdf8;
+}
 
 nav a{
 color:white;
-margin:0 10px;
+margin-left:15px;
 text-decoration:none;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#38bdf8;
 }
 
 /* =======================
@@ -60,13 +70,13 @@ padding:0 80px;
 gap:40px;
 }
 
-/* LEFT SIDE OF HERO */
+/* HERO LEFT */
 .hero-left{
 flex:1;
 max-width:600px;
 }
 
-/* HERO SUBTEXT ANIMATION */
+/* HELLO TEXT */
 .hero small{
 color:#cbd5e1;
 font-size:18px;
@@ -75,6 +85,7 @@ transform:translateY(-20px);
 animation:fadeDown 1s ease forwards;
 }
 
+/* ANIMATION */
 @keyframes fadeDown{
 to{
 opacity:1;
@@ -82,17 +93,18 @@ transform:translateY(0);
 }
 }
 
-/* NAME ANIMATION */
+/* NAME */
 .hero h1{
-font-size:50px;
+font-size:52px;
 color:#38bdf8;
+margin-top:10px;
 opacity:0;
 transform:translateX(-120px);
 animation:slideName 1.2s ease forwards;
 animation-delay:0.3s;
-margin-top:10px;
 }
 
+/* NAME ANIMATION */
 @keyframes slideName{
 to{
 opacity:1;
@@ -104,22 +116,28 @@ transform:translateX(0);
 .hero p{
 margin-top:15px;
 color:#cbd5e1;
-line-height:1.6;
+line-height:1.8;
 }
 
 /* BUTTONS */
 .btn{
-margin-top:20px;
+margin-top:25px;
 display:flex;
-gap:10px;
+gap:15px;
 }
 
 .btn a{
-padding:10px 20px;
+padding:12px 22px;
 background:#38bdf8;
 color:black;
 text-decoration:none;
 border-radius:8px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn a:hover{
+transform:translateY(-3px);
 }
 
 /* =======================
@@ -133,14 +151,12 @@ align-items:center;
 }
 
 .photo-box{
-width:300px;
-height:300px;
+width:320px;
+height:320px;
 border-radius:20px;
-border:2px dashed #38bdf8;
+border:3px solid #38bdf8;
 overflow:hidden;
-display:flex;
-align-items:center;
-justify-content:center;
+box-shadow:0 0 20px rgba(56,189,248,0.4);
 }
 
 .photo-box img{
@@ -150,10 +166,10 @@ object-fit:cover;
 }
 
 /* =======================
-   SECTION STYLE
+   SECTION COMMON
 ======================= */
 section{
-padding:80px 20px;
+padding:90px 20px;
 max-width:1000px;
 margin:auto;
 }
@@ -161,60 +177,67 @@ margin:auto;
 h2{
 color:#38bdf8;
 margin-bottom:20px;
-}
-
-/* ABOUT TEXT WITH SPACE FIX */
-.about-text{
-color:#cbd5e1;
-line-height:1.7;
-margin-bottom:30px;   /* ✅ SPACE ADDED */
+font-size:32px;
 }
 
 /* =======================
-   GRID FOR ABOUT CARDS
+   ABOUT
 ======================= */
+.about-text{
+color:#cbd5e1;
+line-height:1.8;
+margin-bottom:35px;
+}
+
+/* ABOUT GRID */
 .grid-3{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:15px;
-margin-top:10px; /* optional spacing */
+gap:20px;
 }
 
-/* CARD STYLE */
+/* CARD */
 .card{
 background:#1e293b;
 padding:20px;
-border-radius:10px;
+border-radius:12px;
 transition:0.3s;
 }
 
-/* CARD HOVER */
 .card:hover{
 transform:translateY(-5px);
+box-shadow:0 0 15px rgba(56,189,248,0.3);
 }
 
-/* ICON TITLE */
+/* CARD TITLE */
 .icon-title{
 font-weight:bold;
-margin-bottom:8px;
+margin-bottom:10px;
 display:flex;
 align-items:center;
 gap:8px;
+font-size:18px;
 }
 
 /* =======================
    SKILLS
 ======================= */
 .skills-group{
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
 .skills-group span{
 display:inline-block;
 background:#334155;
-padding:6px 12px;
-margin:5px;
+padding:7px 14px;
+margin:6px;
 border-radius:20px;
+transition:0.3s;
+}
+
+.skills-group span:hover{
+background:#38bdf8;
+color:black;
 }
 
 /* =======================
@@ -223,29 +246,75 @@ border-radius:20px;
 .exp{
 background:#1e293b;
 padding:20px;
-border-radius:10px;
-margin-top:10px;
+border-radius:12px;
+line-height:1.8;
 }
 
 /* =======================
    CONTACT FORM
 ======================= */
-input,textarea{
+input,
+textarea{
 width:100%;
-padding:10px;
+padding:12px;
 margin:10px 0;
 border:none;
-border-radius:5px;
+border-radius:6px;
 background:#1e293b;
 color:white;
+outline:none;
 }
 
+/* NAME ROW */
+.name-row{
+display:flex;
+gap:10px;
+}
+
+.name-row input{
+width:100%;
+}
+
+/* BUTTON */
 button{
-padding:10px 20px;
+padding:12px 22px;
 background:#38bdf8;
 border:none;
+border-radius:6px;
 cursor:pointer;
-border-radius:5px;
+font-weight:bold;
+transition:0.3s;
+}
+
+button:hover{
+transform:translateY(-2px);
+}
+
+/* =======================
+   SOCIAL LINKS
+======================= */
+.social-links{
+display:flex;
+justify-content:center;
+gap:25px;
+margin-top:40px;
+margin-bottom:20px;
+}
+
+/* ICON STYLE */
+.social-links img{
+width:40px;
+height:40px;
+border-radius:50%;
+transition:0.3s;
+object-fit:cover;
+background:white;
+padding:5px;
+}
+
+/* HOVER */
+.social-links img:hover{
+transform:scale(1.15);
 }
 
 /* =======================
@@ -256,18 +325,38 @@ text-align:center;
 padding:20px;
 background:#111827;
 margin-top:20px;
+color:#cbd5e1;
 }
 
 /* =======================
    RESPONSIVE
 ======================= */
 @media(max-width:768px){
+
 .hero{
 flex-direction:column;
 text-align:center;
-padding:20px;
+padding:120px 20px 40px;
+height:auto;
 }
-.hero h1{ font-size:35px; }
+
+.hero h1{
+font-size:38px;
+}
+
+.grid-3{
+grid-template-columns:1fr;
+}
+
+.name-row{
+flex-direction:column;
+}
+
+.photo-box{
+width:250px;
+height:250px;
+}
+
 }
 
 </style>
@@ -275,9 +364,13 @@ padding:20px;
 
 <body>
 
-<!-- NAV -->
+<!-- =======================
+   NAVBAR
+======================= -->
 <nav>
+
 <h2>Santhosh</h2>
+
 <div>
 <a href="#home">Home</a>
 <a href="#about">About</a>
@@ -286,13 +379,19 @@ padding:20px;
 <a href="#experience">Experience</a>
 <a href="#contact">Contact</a>
 </div>
+
 </nav>
 
-<!-- HERO -->
+<!-- =======================
+   HERO SECTION
+======================= -->
 <section class="hero" id="home">
 
+<!-- LEFT -->
 <div class="hero-left">
+
 <small>Hello I am</small>
+
 <h1>Santhosh Akkisetti</h1>
 
 <p>
@@ -304,18 +403,25 @@ Focused on building scalable, user-friendly digital solutions using Python, Clou
 <a href="#projects">View Work</a>
 <a href="#contact">Contact Me</a>
 </div>
+
 </div>
 
+<!-- RIGHT -->
 <div class="hero-right">
+
 <div class="photo-box">
 <img src="img.jpeg" alt="Profile Photo">
 </div>
+
 </div>
 
 </section>
 
-<!-- ABOUT -->
+<!-- =======================
+   ABOUT
+======================= -->
 <section id="about">
+
 <h2>About Me</h2>
 
 <p class="about-text">
@@ -324,7 +430,7 @@ I have strong analytical thinking and problem-solving skills.
 I am passionate about building scalable applications and user-friendly digital experiences using modern technologies like Python, AWS, and UI/UX design.
 </p>
 
-<!-- INFO CARDS -->
+<!-- CARDS -->
 <div class="grid-3">
 
 <div class="card">
@@ -349,16 +455,21 @@ Problem Solving
 </div>
 
 </div>
+
 </section>
 
-<!-- SKILLS -->
+<!-- =======================
+   SKILLS
+======================= -->
 <section id="skills">
+
 <h2>Skills</h2>
 
 <div class="skills-group">
 <b>Programming:</b><br>
 <span>Python</span>
 </div>
+
 <div class="skills-group">
 <b>Frontend:</b><br>
 <span>HTML</span>
@@ -389,92 +500,164 @@ Problem Solving
 <span>CSA</span>
 <span>CAD</span>
 </div>
+
 </section>
 
-<!-- EXPERIENCE -->
+<!-- =======================
+   EXPERIENCE
+======================= -->
 <section id="experience">
+
 <h2>Experience</h2>
 
 <div class="exp">
+
 <b>Cloud & ServiceNow Intern - SmartBridge</b><br><br>
+
 • AWS EC2, S3, RDS, Lambda hands-on experience<br>
 • ServiceNow CSA & CAD platform development<br>
 • Python-based automation tasks<br>
 • UI/UX support and cloud deployment practice
+
 </div>
+
 </section>
 
-<!-- PROJECTS -->
+<!-- =======================
+   PROJECTS
+======================= -->
 <section id="projects">
+
 <h2>Projects</h2>
 
 <div class="card">
+
 <b>Employee Management System (MySQL)</b><br><br>
+
 A database-driven application designed to manage employee records efficiently.
 It supports adding, updating, deleting, and viewing employee details along with structured storage of attendance and salary data.
 
 <br><br>
+
 <b>Tech Stack:</b> MySQL, SQL Queries, Basic Backend Logic
+
 </div>
 
 <br>
 
 <div class="card">
+
 <b>ClinicConnect (UI/UX Design)</b><br><br>
+
 A modern healthcare appointment booking system designed in Figma.
 It focuses on improving patient experience with easy navigation and booking flow.
 
 <br><br>
+
 <b>Features:</b> User-friendly interface, appointment flow design<br>
 <b>Tool Used:</b> Figma
+
 </div>
 
 </section>
 
-<!-- CONTACT -->
+<!-- =======================
+   CONTACT
+======================= -->
 <section id="contact">
+
 <h2>Let's Connect</h2>
 
 <p style="color:#cbd5e1;">
 I'm always excited to collaborate or discuss opportunities.
 </p>
 
+<!-- FORM -->
 <form id="contactForm">
-<input type="text" id="name" placeholder="Name" required>
+
+<div class="name-row">
+
+<input type="text" id="firstName" placeholder="First Name" required>
+
+<input type="text" id="lastName" placeholder="Last Name" required>
+
+</div>
+
 <input type="email" id="email" placeholder="Email" required>
+
 <input type="text" id="subject" placeholder="Subject" required>
+
 <textarea id="message" placeholder="Message" rows="5" required></textarea>
+
 <button type="submit">Send Message</button>
+
 </form>
+
+<!-- SOCIAL LINKS -->
+<div class="social-links">
+
+<!-- GITHUB -->
+<a href="https://github.com/santhoshakkisetti" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+</a>
+
+<!-- LINKEDIN -->
+<a href="https://linkedin.com/in/akkisetti-santhosh" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+</a>
+
+<!-- PHONE -->
+<a href="tel:9912997225">
+<img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Phone">
+</a>
+
+<!-- EMAIL -->
+<a href="mailto:santhoshakkisetti26@gmail.com">
+<img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+</a>
+
+</div>
+
 </section>
 
-<!-- FOOTER -->
+<!-- =======================
+   FOOTER
+======================= -->
 <footer>
-© 2026 Santhosh Akkisetti
+© 2025 SANTHOSH AKKISETTI. All rights reserved.
 </footer>
 
-<!-- JS -->
+<!-- =======================
+   JAVASCRIPT
+======================= -->
 <script>
+
 document.getElementById("contactForm").addEventListener("submit", function(e){
-    e.preventDefault();
 
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let subject = document.getElementById("subject").value;
-    let message = document.getElementById("message").value;
+e.preventDefault();
 
-    let mailBody =
-`Name: ${name}
+let firstName = document.getElementById("firstName").value;
+let lastName = document.getElementById("lastName").value;
+let email = document.getElementById("email").value;
+let subject = document.getElementById("subject").value;
+let message = document.getElementById("message").value;
+
+/* EMAIL BODY */
+let mailBody =
+`Name: ${firstName} ${lastName}
 Email: ${email}
 
 Message:
 ${message}`;
 
-    let mailtoLink =
-    `mailto:santhoshakkisetti26@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(mailBody)}`;
+/* MAIL LINK */
+let mailtoLink =
+`mailto:santhoshakkisetti26@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(mailBody)}`;
 
-    window.location.href = mailtoLink;
+window.location.href = mailtoLink;
+
 });
+
 </script>
 
 </body>
