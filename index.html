@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SanthoshAkkisetti - Portfolio</title>
+
+<style>
+
+/* =======================
+   GLOBAL RESET
+======================= */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+scroll-behavior:smooth;
+}
+
+/* =======================
+   BODY STYLING
+======================= */
+body{
+background:#0f172a;
+color:white;
+}
+
+/* =======================
+   NAVIGATION BAR
+======================= */
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#111827;
+display:flex;
+justify-content:space-between;
+padding:15px 30px;
+z-index:1000;
+}
+
+nav h2{ color:#38bdf8; }
+
+nav a{
+color:white;
+margin:0 10px;
+text-decoration:none;
+}
+
+/* =======================
+   HERO SECTION
+======================= */
+.hero{
+height:100vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 80px;
+gap:40px;
+}
+
+/* LEFT SIDE OF HERO */
+.hero-left{
+flex:1;
+max-width:600px;
+}
+
+/* HERO SUBTEXT ANIMATION */
+.hero small{
+color:#cbd5e1;
+font-size:18px;
+opacity:0;
+transform:translateY(-20px);
+animation:fadeDown 1s ease forwards;
+}
+
+@keyframes fadeDown{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* NAME ANIMATION */
+.hero h1{
+font-size:50px;
+color:#38bdf8;
+opacity:0;
+transform:translateX(-120px);
+animation:slideName 1.2s ease forwards;
+animation-delay:0.3s;
+margin-top:10px;
+}
+
+@keyframes slideName{
+to{
+opacity:1;
+transform:translateX(0);
+}
+}
+
+/* HERO TEXT */
+.hero p{
+margin-top:15px;
+color:#cbd5e1;
+line-height:1.6;
+}
+
+/* BUTTONS */
+.btn{
+margin-top:20px;
+display:flex;
+gap:10px;
+}
+
+.btn a{
+padding:10px 20px;
+background:#38bdf8;
+color:black;
+text-decoration:none;
+border-radius:8px;
+}
+
+/* =======================
+   HERO IMAGE
+======================= */
+.hero-right{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.photo-box{
+width:300px;
+height:300px;
+border-radius:20px;
+border:2px dashed #38bdf8;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.photo-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* =======================
+   SECTION STYLE
+======================= */
+section{
+padding:80px 20px;
+max-width:1000px;
+margin:auto;
+}
+
+h2{
+color:#38bdf8;
+margin-bottom:20px;
+}
+
+/* ABOUT TEXT WITH SPACE FIX */
+.about-text{
+color:#cbd5e1;
+line-height:1.7;
+margin-bottom:30px;   /* ✅ SPACE ADDED */
+}
+
+/* =======================
+   GRID FOR ABOUT CARDS
+======================= */
+.grid-3{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-top:10px; /* optional spacing */
+}
+
+/* CARD STYLE */
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+transition:0.3s;
+}
+
+/* CARD HOVER */
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* ICON TITLE */
+.icon-title{
+font-weight:bold;
+margin-bottom:8px;
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+/* =======================
+   SKILLS
+======================= */
+.skills-group{
+margin-bottom:15px;
+}
+
+.skills-group span{
+display:inline-block;
+background:#334155;
+padding:6px 12px;
+margin:5px;
+border-radius:20px;
+}
+
+/* =======================
+   EXPERIENCE
+======================= */
+.exp{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+margin-top:10px;
+}
+
+/* =======================
+   CONTACT FORM
+======================= */
+input,textarea{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+background:#1e293b;
+color:white;
+}
+
+button{
+padding:10px 20px;
+background:#38bdf8;
+border:none;
+cursor:pointer;
+border-radius:5px;
+}
+
+/* =======================
+   FOOTER
+======================= */
+footer{
+text-align:center;
+padding:20px;
+background:#111827;
+margin-top:20px;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media(max-width:768px){
+.hero{
+flex-direction:column;
+text-align:center;
+padding:20px;
+}
+.hero h1{ font-size:35px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+<h2>Santhosh</h2>
+<div>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#experience">Experience</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+<div class="hero-left">
+<small>Hello I am</small>
+<h1>Santhosh Akkisetti</h1>
+
+<p>
+B.Tech EEE student transitioning into IT with strong analytical and problem-solving skills.
+Focused on building scalable, user-friendly digital solutions using Python, Cloud, and UI/UX.
+</p>
+
+<div class="btn">
+<a href="#projects">View Work</a>
+<a href="#contact">Contact Me</a>
+</div>
+</div>
+
+<div class="hero-right">
+<div class="photo-box">
+<img src="img.jpeg" alt="Profile Photo">
+</div>
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Me</h2>
+
+<p class="about-text">
+I am a B.Tech Electrical and Electronics Engineering student transitioning into the IT field.
+I have strong analytical thinking and problem-solving skills.
+I am passionate about building scalable applications and user-friendly digital experiences using modern technologies like Python, AWS, and UI/UX design.
+</p>
+
+<!-- INFO CARDS -->
+<div class="grid-3">
+
+<div class="card">
+<div class="icon-title">🎓 Education</div>
+B.Tech EEE<br>
+CGPA: 7.8/10<br>
+Gayatri Vidya Parishad College of Engineering
+</div>
+
+<div class="card">
+<div class="icon-title">🏠 Location</div>
+Andhra Pradesh, India<br>
+Open to Remote Work
+</div>
+
+<div class="card">
+<div class="icon-title">💡 Interests</div>
+UI/UX Design<br>
+Cloud Computing<br>
+Web Development<br>
+Problem Solving
+</div>
+
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2>Skills</h2>
+
+<div class="skills-group">
+<b>Programming:</b><br>
+<span>Python</span>
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+</div>
+
+<div class="skills-group">
+<b>Database:</b><br>
+<span>MySQL</span>
+</div>
+
+<div class="skills-group">
+<b>Cloud:</b><br>
+<span>AWS EC2</span>
+<span>AWS S3</span>
+<span>AWS IAM</span>
+<span>AWS Lambda</span>
+</div>
+
+<div class="skills-group">
+<b>Design:</b><br>
+<span>UI/UX (Figma)</span>
+</div>
+
+<div class="skills-group">
+<b>ServiceNow:</b><br>
+<span>CSA</span>
+<span>CAD</span>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+<h2>Experience</h2>
+
+<div class="exp">
+<b>Cloud & ServiceNow Intern - SmartBridge</b><br><br>
+• AWS EC2, S3, RDS, Lambda hands-on experience<br>
+• ServiceNow CSA & CAD platform development<br>
+• Python-based automation tasks<br>
+• UI/UX support and cloud deployment practice
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projects</h2>
+
+<div class="card">
+<b>Employee Management System (MySQL)</b><br><br>
+A database-driven application designed to manage employee records efficiently.
+It supports adding, updating, deleting, and viewing employee details along with structured storage of attendance and salary data.
+
+<br><br>
+<b>Tech Stack:</b> MySQL, SQL Queries, Basic Backend Logic
+</div>
+
+<br>
+
+<div class="card">
+<b>ClinicConnect (UI/UX Design)</b><br><br>
+A modern healthcare appointment booking system designed in Figma.
+It focuses on improving patient experience with easy navigation and booking flow.
+
+<br><br>
+<b>Features:</b> User-friendly interface, appointment flow design<br>
+<b>Tool Used:</b> Figma
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Let's Connect</h2>
+
+<p style="color:#cbd5e1;">
+I'm always excited to collaborate or discuss opportunities.
+</p>
+
+<form id="contactForm">
+<input type="text" id="name" placeholder="Name" required>
+<input type="email" id="email" placeholder="Email" required>
+<input type="text" id="subject" placeholder="Subject" required>
+<textarea id="message" placeholder="Message" rows="5" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+© 2026 Santhosh Akkisetti
+</footer>
+
+<!-- JS -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let subject = document.getElementById("subject").value;
+    let message = document.getElementById("message").value;
+
+    let mailBody =
+`Name: ${name}
+Email: ${email}
+
+Message:
+${message}`;
+
+    let mailtoLink =
+    `mailto:santhoshakkisetti26@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(mailBody)}`;
+
+    window.location.href = mailtoLink;
+});
+</script>
+
+</body>
+</html>
