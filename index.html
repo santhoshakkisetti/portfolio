@@ -36,9 +36,7 @@
             position: fixed;
             top: 0;
             left: 0;
-
             width: 100%;
-
             height: 90px;
 
             padding: 0 32px;
@@ -48,7 +46,6 @@
             align-items: center;
 
             background: rgba(15, 23, 42, 0.96);
-
             backdrop-filter: blur(12px);
 
             box-shadow: 0 3px 20px rgba(0, 0, 0, 0.35);
@@ -59,7 +56,6 @@
         nav h2 {
             color: #38bdf8;
             font-size: 27px;
-
             white-space: nowrap;
 
             animation: navName 1s ease forwards;
@@ -85,13 +81,9 @@
 
         nav a {
             color: white;
-
             text-decoration: none;
-
             margin-left: 22px;
-
             font-size: 16px;
-
             transition: 0.3s;
         }
 
@@ -106,20 +98,15 @@
 
         .hero {
             min-height: 100vh;
-
             width: 100%;
 
-            padding:
-                120px 80px 60px;
+            padding: 120px 80px 60px;
 
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
 
             gap: 70px;
-
             overflow: hidden;
         }
 
@@ -130,9 +117,7 @@
 
         .hero-left {
             flex: 1;
-
             max-width: 620px;
-
             z-index: 2;
         }
 
@@ -140,7 +125,6 @@
             display: block;
 
             color: #cbd5e1;
-
             font-size: 19px;
 
             margin-bottom: 10px;
@@ -171,13 +155,10 @@
 
         .hero h1 {
             font-size: 58px;
-
             line-height: 1.15;
-
             color: #38bdf8;
 
             margin-bottom: 20px;
-
             min-height: 135px;
         }
 
@@ -185,7 +166,6 @@
             display: inline-block;
 
             overflow: hidden;
-
             white-space: nowrap;
 
             width: 0;
@@ -244,7 +224,6 @@
             color: #cbd5e1;
 
             font-size: 17px;
-
             line-height: 1.8;
 
             max-width: 600px;
@@ -275,7 +254,6 @@
 
         .btn {
             display: flex;
-
             gap: 15px;
 
             margin-top: 28px;
@@ -290,7 +268,6 @@
             text-decoration: none;
 
             background: #38bdf8;
-
             color: #020617;
 
             padding: 13px 24px;
@@ -316,13 +293,10 @@
 
         .hero-right {
             flex: 1;
-
             min-width: 0;
 
             display: flex;
-
             justify-content: center;
-
             align-items: center;
 
             opacity: 0;
@@ -351,26 +325,29 @@
 
 
         /* =========================
-           PHOTO FRAME
+           PROFILE PHOTO FRAME
+           
+           UPDATED:
+           - Portrait frame
+           - No image cropping
+           - Entire image visible
+           - Rounded professional design
         ========================= */
 
         .photo-box {
-
             width: 360px;
-            height: 360px;
+            height: 450px;
 
             flex-shrink: 0;
 
-            border-radius: 50%;
+            border-radius: 28px;
 
             border: 4px solid #38bdf8;
 
             background: #0f172a;
 
             display: flex;
-
             justify-content: center;
-
             align-items: center;
 
             overflow: hidden;
@@ -401,33 +378,29 @@
            PROFILE IMAGE
            
            IMPORTANT:
-           contain = DO NOT CROP IMAGE
+           contain = FULL IMAGE
+           NO CROPPING
         ========================= */
 
         .photo-box img {
-
             width: 100%;
-
             height: 100%;
 
             display: block;
 
             object-fit: contain;
-
             object-position: center;
 
             background: #0f172a;
 
-            transition:
-                transform 0.5s ease;
+            transition: filter 0.4s ease;
         }
 
         .photo-box:hover img {
-            transform: scale(1.04);
+            filter: brightness(1.08);
         }
 
         .photo-box:hover {
-
             box-shadow:
                 0 0 30px rgba(56, 189, 248, 0.8),
                 0 0 65px rgba(56, 189, 248, 0.4),
@@ -440,9 +413,7 @@
         ========================= */
 
         section {
-
             max-width: 1000px;
-
             margin: auto;
 
             padding:
@@ -450,11 +421,8 @@
         }
 
         section h2 {
-
             color: #38bdf8;
-
             font-size: 32px;
-
             margin-bottom: 25px;
         }
 
@@ -464,20 +432,15 @@
         ========================= */
 
         .about-text {
-
             color: #cbd5e1;
-
             line-height: 1.8;
 
             margin-bottom: 35px;
-
             font-size: 16px;
         }
 
         .grid-3 {
-
             display: grid;
-
             grid-template-columns:
                 repeat(3, 1fr);
 
@@ -490,13 +453,11 @@
         ========================= */
 
         .card {
-
             background: #1e293b;
 
             padding: 22px;
 
             border-radius: 12px;
-
             line-height: 1.7;
 
             border: 1px solid transparent;
@@ -505,7 +466,6 @@
         }
 
         .card:hover {
-
             transform: translateY(-5px);
 
             border-color:
@@ -516,11 +476,8 @@
         }
 
         .icon-title {
-
             font-weight: bold;
-
             font-size: 18px;
-
             margin-bottom: 10px;
         }
 
@@ -530,14 +487,11 @@
         ========================= */
 
         .skills-group {
-
             margin-bottom: 22px;
-
             color: #cbd5e1;
         }
 
         .skills-group span {
-
             display: inline-block;
 
             background: #334155;
@@ -554,9 +508,7 @@
         }
 
         .skills-group span:hover {
-
             background: #38bdf8;
-
             color: #020617;
 
             transform: translateY(-2px);
@@ -568,7 +520,6 @@
         ========================= */
 
         .certifications-grid {
-
             display: grid;
 
             grid-template-columns:
@@ -578,7 +529,6 @@
         }
 
         .certification-card {
-
             background: #1e293b;
 
             padding: 25px;
@@ -591,7 +541,6 @@
         }
 
         .certification-card:hover {
-
             transform: translateY(-5px);
 
             border-color: #38bdf8;
@@ -601,23 +550,18 @@
         }
 
         .certification-icon {
-
             font-size: 35px;
-
             margin-bottom: 15px;
         }
 
         .certification-card h3 {
-
             font-size: 19px;
-
             line-height: 1.4;
 
             margin-bottom: 12px;
         }
 
         .certification-card p {
-
             color: #cbd5e1;
 
             line-height: 1.6;
@@ -626,11 +570,9 @@
         }
 
         .certification-badge {
-
             display: inline-block;
 
             background: #334155;
-
             color: #38bdf8;
 
             padding:
@@ -639,7 +581,6 @@
             border-radius: 20px;
 
             font-size: 14px;
-
             font-weight: bold;
         }
 
@@ -649,7 +590,6 @@
         ========================= */
 
         .exp {
-
             background: #1e293b;
 
             padding: 25px;
@@ -668,12 +608,10 @@
         ========================= */
 
         #projects .card {
-
             margin-bottom: 22px;
         }
 
         .project-link {
-
             display: inline-block;
 
             margin-top: 15px;
@@ -682,7 +620,6 @@
                 10px 16px;
 
             background: #38bdf8;
-
             color: #020617;
 
             text-decoration: none;
@@ -695,7 +632,6 @@
         }
 
         .project-link:hover {
-
             transform: translateY(-3px);
 
             box-shadow:
@@ -708,15 +644,12 @@
         ========================= */
 
         #contact > p {
-
             color: #cbd5e1;
-
             margin-bottom: 20px;
         }
 
         input,
         textarea {
-
             width: 100%;
 
             padding: 13px;
@@ -731,7 +664,6 @@
             outline: none;
 
             background: #1e293b;
-
             color: white;
 
             transition: 0.3s;
@@ -739,7 +671,6 @@
 
         input:focus,
         textarea:focus {
-
             border-color: #38bdf8;
 
             box-shadow:
@@ -747,31 +678,25 @@
         }
 
         textarea {
-
             resize: vertical;
         }
 
         .name-row {
-
             display: flex;
-
             gap: 10px;
         }
 
         .name-row input {
-
             flex: 1;
         }
 
         button {
-
             margin-top: 8px;
 
             padding:
                 12px 22px;
 
             background: #38bdf8;
-
             color: #020617;
 
             border: none;
@@ -786,7 +711,6 @@
         }
 
         button:hover {
-
             transform: translateY(-2px);
 
             box-shadow:
@@ -799,11 +723,9 @@
         ========================= */
 
         .social-links {
-
             display: flex;
 
             justify-content: center;
-
             align-items: center;
 
             gap: 25px;
@@ -812,15 +734,12 @@
         }
 
         .social-links a {
-
             width: 50px;
-
             height: 50px;
 
             display: flex;
 
             justify-content: center;
-
             align-items: center;
 
             background: #1e293b;
@@ -833,7 +752,6 @@
         }
 
         .social-links a:hover {
-
             transform:
                 translateY(-5px)
                 scale(1.05);
@@ -845,9 +763,7 @@
         }
 
         .social-links img {
-
             width: 27px;
-
             height: 27px;
 
             object-fit: contain;
@@ -859,7 +775,6 @@
         ========================= */
 
         footer {
-
             text-align: center;
 
             padding: 22px;
@@ -877,24 +792,19 @@
         @media (max-width: 1000px) {
 
             .hero {
-
                 padding-left: 45px;
-
                 padding-right: 45px;
 
                 gap: 35px;
             }
 
             .hero h1 {
-
                 font-size: 48px;
             }
 
             .photo-box {
-
                 width: 320px;
-
-                height: 320px;
+                height: 410px;
             }
         }
 
@@ -906,7 +816,6 @@
         @media (max-width: 768px) {
 
             nav {
-
                 height: 75px;
 
                 padding:
@@ -914,17 +823,14 @@
             }
 
             nav h2 {
-
                 font-size: 21px;
             }
 
             nav div {
-
                 display: none;
             }
 
             .hero {
-
                 min-height: auto;
 
                 padding:
@@ -938,53 +844,44 @@
             }
 
             .hero-left {
-
                 max-width: 100%;
             }
 
             .hero h1 {
-
                 font-size: 42px;
-
                 min-height: 100px;
             }
 
             .hero p {
-
                 font-size: 15px;
             }
 
             .btn {
-
                 justify-content: center;
             }
 
             .hero-right {
-
                 width: 100%;
             }
 
+            /* FULL PORTRAIT ON MOBILE */
             .photo-box {
-
                 width: 280px;
+                height: 360px;
 
-                height: 280px;
+                border-radius: 24px;
             }
 
             .grid-3 {
-
                 grid-template-columns: 1fr;
             }
 
             .certifications-grid {
-
                 grid-template-columns: 1fr;
             }
 
             .name-row {
-
                 flex-direction: column;
-
                 gap: 0;
             }
         }
@@ -997,33 +894,27 @@
         @media (max-width: 450px) {
 
             nav h2 {
-
                 font-size: 18px;
             }
 
             .hero h1 {
-
                 font-size: 34px;
-
                 min-height: 80px;
             }
 
             .photo-box {
-
                 width: 240px;
+                height: 310px;
 
-                height: 240px;
+                border-radius: 20px;
             }
 
             .btn {
-
                 flex-direction: column;
-
                 align-items: center;
             }
 
             .btn a {
-
                 width: 180px;
             }
         }
@@ -1048,17 +939,11 @@
         <div>
 
             <a href="#home">Home</a>
-
             <a href="#about">About</a>
-
             <a href="#skills">Skills</a>
-
             <a href="#certifications">Certifications</a>
-
             <a href="#experience">Experience</a>
-
             <a href="#projects">Projects</a>
-
             <a href="#contact">Contact</a>
 
         </div>
@@ -1094,7 +979,7 @@
                 B.Tech EEE student transitioning into IT with strong
                 analytical and problem-solving skills. Focused on building
                 scalable, user-friendly digital solutions using Python,
-                Cloud, and UI/UX.
+               AWS Cloud, Servicenow (CSA & CAD) and UI/UX.
 
             </p>
 
@@ -1121,7 +1006,8 @@
 
                 <img
                     src="./img.jpeg?v=20260813"
-                    alt="Santhosh Akkisetti">
+                    alt="Santhosh Akkisetti"
+                >
 
             </div>
 
@@ -1241,9 +1127,7 @@
             <br>
 
             <span>HTML</span>
-
             <span>CSS</span>
-
             <span>JavaScript</span>
 
         </div>
@@ -1267,11 +1151,8 @@
             <br>
 
             <span>AWS EC2</span>
-
             <span>AWS S3</span>
-
             <span>AWS IAM</span>
-
             <span>AWS Lambda</span>
 
         </div>
@@ -1284,7 +1165,6 @@
             <br>
 
             <span>UI/UX</span>
-
             <span>Figma</span>
 
         </div>
@@ -1297,7 +1177,6 @@
             <br>
 
             <span>CSA</span>
-
             <span>CAD</span>
 
         </div>
@@ -1544,6 +1423,8 @@
             <b>
                 Tech Stack:
             </b>
+
+            <br>
 
             MySQL, SQL
 
