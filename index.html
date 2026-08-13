@@ -4,11 +4,9 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Santhosh Akkisetti | Portfolio</title>
-
 
 <style>
 
@@ -42,14 +40,22 @@ body{
 nav{
     position:fixed;
     top:0;
+    left:0;
     width:100%;
-    background:#111827;
+
+    background:rgba(17,24,39,0.95);
+
     display:flex;
     justify-content:space-between;
     align-items:center;
+
     padding:15px 30px;
+
     z-index:1000;
+
     box-shadow:0 2px 10px rgba(0,0,0,0.5);
+
+    backdrop-filter:blur(10px);
 }
 
 nav h2{
@@ -73,31 +79,47 @@ nav a:hover{
 ======================= */
 
 .hero{
-    height:100vh;
+
+    min-height:100vh;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
-    padding:0 80px;
-    gap:40px;
+
+    padding:120px 80px 60px;
+
+    gap:60px;
+
 }
 
 
 /* HERO LEFT */
 
 .hero-left{
+
     flex:1;
+
     max-width:600px;
+
 }
 
 
 /* HELLO TEXT */
 
 .hero small{
+
     color:#cbd5e1;
+
     font-size:18px;
+
     opacity:0;
+
     transform:translateY(-20px);
+
     animation:fadeDown 1s ease forwards;
+
 }
 
 
@@ -106,8 +128,11 @@ nav a:hover{
 @keyframes fadeDown{
 
     to{
+
         opacity:1;
+
         transform:translateY(0);
+
     }
 
 }
@@ -116,8 +141,11 @@ nav a:hover{
 /* NAME */
 
 .hero h1{
+
     font-size:52px;
+
     color:#38bdf8;
+
     margin-top:10px;
 
     opacity:0;
@@ -127,6 +155,7 @@ nav a:hover{
     animation:slideName 1.2s ease forwards;
 
     animation-delay:0.3s;
+
 }
 
 
@@ -135,8 +164,11 @@ nav a:hover{
 @keyframes slideName{
 
     to{
+
         opacity:1;
+
         transform:translateX(0);
+
     }
 
 }
@@ -145,32 +177,56 @@ nav a:hover{
 /* HERO TEXT */
 
 .hero p{
+
     margin-top:15px;
+
     color:#cbd5e1;
+
     line-height:1.8;
+
+    font-size:16px;
+
 }
 
 
-/* BUTTONS */
+/* =======================
+   BUTTONS
+======================= */
 
 .btn{
+
     margin-top:25px;
+
     display:flex;
+
     gap:15px;
+
 }
 
 .btn a{
+
     padding:12px 22px;
+
     background:#38bdf8;
-    color:black;
+
+    color:#020617;
+
     text-decoration:none;
+
     border-radius:8px;
+
     font-weight:bold;
+
     transition:0.3s;
+
 }
 
 .btn a:hover{
+
     transform:translateY(-3px);
+
+    box-shadow:0 8px 20px rgba(56,189,248,0.3);
+
 }
 
 
@@ -179,29 +235,87 @@ nav a:hover{
 ======================= */
 
 .hero-right{
+
     flex:1;
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
 }
 
+
+/* OUTER CIRCLE */
+
 .photo-box{
-    width:320px;
-    height:320px;
 
-    border-radius:20px;
+    width:330px;
 
-    border:3px solid #38bdf8;
+    height:330px;
+
+    border-radius:50%;
+
+    border:4px solid #38bdf8;
 
     overflow:hidden;
 
-    box-shadow:0 0 20px rgba(56,189,248,0.4);
+    position:relative;
+
+    background:#1e293b;
+
+    box-shadow:
+
+        0 0 20px rgba(56,189,248,0.4),
+
+        0 0 50px rgba(56,189,248,0.15);
+
+    transition:0.4s ease;
+
 }
 
+
+/* IMAGE */
+
 .photo-box img{
+
     width:100%;
+
     height:100%;
+
     object-fit:cover;
+
+    object-position:center;
+
+    display:block;
+
+    transition:0.5s ease;
+
+}
+
+
+/* IMAGE HOVER */
+
+.photo-box:hover{
+
+    transform:scale(1.04);
+
+    box-shadow:
+
+        0 0 25px rgba(56,189,248,0.6),
+
+        0 0 70px rgba(56,189,248,0.25);
+
+}
+
+
+/* IMAGE ZOOM */
+
+.photo-box:hover img{
+
+    transform:scale(1.05);
+
 }
 
 
@@ -210,15 +324,23 @@ nav a:hover{
 ======================= */
 
 section{
+
     padding:90px 20px;
+
     max-width:1000px;
+
     margin:auto;
+
 }
 
 h2{
+
     color:#38bdf8;
+
     margin-bottom:20px;
+
     font-size:32px;
+
 }
 
 
@@ -227,48 +349,72 @@ h2{
 ======================= */
 
 .about-text{
+
     color:#cbd5e1;
+
     line-height:1.8;
+
     margin-bottom:35px;
+
 }
 
 
 /* ABOUT GRID */
 
 .grid-3{
+
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
+
     gap:20px;
+
 }
 
 
 /* CARD */
 
 .card{
+
     background:#1e293b;
+
     padding:20px;
+
     border-radius:12px;
+
     transition:0.3s;
+
+    border:1px solid transparent;
+
 }
 
 .card:hover{
+
     transform:translateY(-5px);
+
     box-shadow:0 0 15px rgba(56,189,248,0.3);
+
+    border-color:rgba(56,189,248,0.3);
+
 }
 
 
 /* CARD TITLE */
 
 .icon-title{
+
     font-weight:bold;
+
     margin-bottom:10px;
 
     display:flex;
+
     align-items:center;
 
     gap:8px;
 
     font-size:18px;
+
 }
 
 
@@ -277,10 +423,13 @@ h2{
 ======================= */
 
 .skills-group{
+
     margin-bottom:20px;
+
 }
 
 .skills-group span{
+
     display:inline-block;
 
     background:#334155;
@@ -292,11 +441,17 @@ h2{
     border-radius:20px;
 
     transition:0.3s;
+
 }
 
 .skills-group span:hover{
+
     background:#38bdf8;
+
     color:black;
+
+    transform:translateY(-2px);
+
 }
 
 
@@ -407,6 +562,8 @@ h2{
 
     line-height:1.8;
 
+    border-left:4px solid #38bdf8;
+
 }
 
 
@@ -417,6 +574,8 @@ h2{
 #projects .card{
 
     margin-bottom:20px;
+
+    line-height:1.7;
 
 }
 
@@ -448,6 +607,8 @@ h2{
 
     transform:translateY(-2px);
 
+    box-shadow:0 5px 15px rgba(56,189,248,0.3);
+
 }
 
 
@@ -473,6 +634,20 @@ textarea{
     color:white;
 
     outline:none;
+
+    border:1px solid transparent;
+
+    transition:0.3s;
+
+}
+
+
+input:focus,
+textarea:focus{
+
+    border-color:#38bdf8;
+
+    box-shadow:0 0 8px rgba(56,189,248,0.15);
 
 }
 
@@ -520,6 +695,8 @@ button:hover{
 
     transform:translateY(-2px);
 
+    box-shadow:0 5px 15px rgba(56,189,248,0.3);
+
 }
 
 
@@ -544,30 +721,49 @@ button:hover{
 
 /* ICON STYLE */
 
-.social-links img{
+.social-links a{
 
-    width:40px;
+    width:50px;
 
-    height:40px;
+    height:50px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#1e293b;
 
     border-radius:50%;
 
     transition:0.3s;
 
-    object-fit:cover;
+    border:1px solid transparent;
 
-    background:white;
+}
 
-    padding:5px;
+
+.social-links img{
+
+    width:28px;
+
+    height:28px;
+
+    object-fit:contain;
 
 }
 
 
 /* HOVER */
 
-.social-links img:hover{
+.social-links a:hover{
 
-    transform:scale(1.15);
+    transform:translateY(-5px) scale(1.08);
+
+    border-color:#38bdf8;
+
+    box-shadow:0 0 15px rgba(56,189,248,0.3);
 
 }
 
@@ -611,11 +807,9 @@ footer{
     }
 
 
-    nav a{
+    nav div{
 
-        margin-left:7px;
-
-        font-size:13px;
+        display:none;
 
     }
 
@@ -626,9 +820,16 @@ footer{
 
         text-align:center;
 
-        padding:120px 20px 40px;
+        padding:130px 20px 60px;
 
-        height:auto;
+        min-height:auto;
+
+    }
+
+
+    .hero-left{
+
+        max-width:100%;
 
     }
 
@@ -640,9 +841,32 @@ footer{
     }
 
 
+    .hero p{
+
+        font-size:15px;
+
+    }
+
+
+    .btn{
+
+        justify-content:center;
+
+    }
+
+
     .hero-right{
 
         margin-top:30px;
+
+    }
+
+
+    .photo-box{
+
+        width:250px;
+
+        height:250px;
 
     }
 
@@ -668,11 +892,50 @@ footer{
     }
 
 
+}
+
+
+/* =======================
+   SMALL MOBILE
+======================= */
+
+@media(max-width:450px){
+
+    .hero h1{
+
+        font-size:32px;
+
+    }
+
+
     .photo-box{
 
-        width:250px;
+        width:220px;
 
-        height:250px;
+        height:220px;
+
+    }
+
+
+    h2{
+
+        font-size:28px;
+
+    }
+
+
+    .btn{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+
+    .btn a{
+
+        width:180px;
 
     }
 
@@ -723,11 +986,9 @@ footer{
 <section class="hero" id="home">
 
 
-    <!-- LEFT -->
-
     <div class="hero-left">
 
-        <small>Hello I am</small>
+        <small>Hello, I am</small>
 
         <h1>Santhosh Akkisetti</h1>
 
@@ -756,7 +1017,7 @@ footer{
 
 
 
-    <!-- RIGHT -->
+    <!-- PROFILE IMAGE -->
 
     <div class="hero-right">
 
@@ -764,7 +1025,7 @@ footer{
 
             <img
                 src="img.jpeg"
-                alt="Profile Photo">
+                alt="Santhosh Akkisetti Profile Photo">
 
         </div>
 
@@ -780,9 +1041,7 @@ footer{
 
 <section id="about">
 
-
     <h2>About Me</h2>
-
 
     <p class="about-text">
 
@@ -790,13 +1049,10 @@ footer{
         transitioning into the IT field. I have strong analytical thinking
         and problem-solving skills. I am passionate about building scalable
         applications and user-friendly digital experiences using modern
-        technologies like Python, AWS, servicenow(CSA,CAD) and UI/UX design.
+        technologies like Python, AWS, ServiceNow (CSA, CAD), and UI/UX design.
 
     </p>
 
-
-
-    <!-- CARDS -->
 
     <div class="grid-3">
 
@@ -865,7 +1121,6 @@ footer{
 ======================= -->
 
 <section id="skills">
-
 
     <h2>Skills</h2>
 
@@ -946,7 +1201,6 @@ footer{
 
     </div>
 
-
 </section>
 
 
@@ -957,27 +1211,21 @@ footer{
 
 <section id="certifications">
 
-
     <h2>Certifications</h2>
 
 
     <div class="certifications-grid">
 
 
-        <!-- SERVICE NOW CSA -->
-
         <div class="certification-card">
-
 
             <div class="certification-icon">
                 🏆
             </div>
 
-
             <h3>
                 ServiceNow Certified System Administrator
             </h3>
-
 
             <p>
 
@@ -986,32 +1234,25 @@ footer{
 
             </p>
 
-
             <span class="certification-badge">
 
                 ServiceNow CSA
 
             </span>
 
-
         </div>
 
 
 
-        <!-- SERVICE NOW CAD -->
-
         <div class="certification-card">
-
 
             <div class="certification-icon">
                 🏆
             </div>
 
-
             <h3>
                 ServiceNow Certified Application Developer
             </h3>
-
 
             <p>
 
@@ -1020,32 +1261,25 @@ footer{
 
             </p>
 
-
             <span class="certification-badge">
 
                 ServiceNow CAD
 
             </span>
 
-
         </div>
 
 
 
-        <!-- AWS -->
-
         <div class="certification-card">
-
 
             <div class="certification-icon">
                 ☁️
             </div>
 
-
             <h3>
                 AWS Certified Cloud Practitioner
             </h3>
-
 
             <p>
 
@@ -1054,13 +1288,11 @@ footer{
 
             </p>
 
-
             <span class="certification-badge">
 
                 AWS Cloud Practitioner
 
             </span>
-
 
         </div>
 
@@ -1077,21 +1309,17 @@ footer{
 
 <section id="experience">
 
-
     <h2>Experience</h2>
 
 
     <div class="exp">
 
-
         <b>
             Cloud & ServiceNow Intern - SmartBridge
         </b>
 
-
         <br>
         <br>
-
 
         • AWS EC2, S3, RDS, Lambda hands-on experience
 
@@ -1107,9 +1335,7 @@ footer{
 
         • UI/UX support and cloud deployment practice
 
-
     </div>
-
 
 </section>
 
@@ -1121,118 +1347,110 @@ footer{
 
 <section id="projects">
 
-
     <h2>Projects</h2>
 
 
+    <!-- SMART CAMPUS -->
 
-    <!-- SMART CAMPUS MANAGEMENT SYSTEM -->
+    <div class="card">
 
-<div class="card">
+        <b>
+            🎓 Smart Campus Management System (ServiceNow)
+        </b>
 
-    <b>
-        🎓 Smart Campus Management System (ServiceNow)
-    </b>
+        <br>
+        <br>
 
-    <br>
-    <br>
+        A ServiceNow-based campus management platform that digitizes
+        academic and administrative workflows for students, faculty,
+        and administrators.
 
-    A ServiceNow-based campus management platform that digitizes
-    academic and administrative workflows for students, faculty,
-    and administrators.
+        <br>
+        <br>
 
-    <br>
-    <br>
+        <b>
+            Features:
+        </b>
 
-    <b>
-        Features:
-    </b>
+        <br>
 
-    <br>
+        ✔ Student and faculty request management
 
-    ✔ Student and faculty request management
+        <br>
 
-    <br>
+        ✔ Course registration and enrollment workflows
 
-    ✔ Course registration and enrollment workflows
+        <br>
 
-    <br>
+        ✔ Faculty leave application management
 
-    ✔ Faculty leave application management
+        <br>
 
-    <br>
+        ✔ Facility complaint management
 
-    ✔ Facility complaint management
+        <br>
 
-    <br>
+        ✔ Automated multi-stage approvals using Flow Designer
 
-    ✔ Automated multi-stage approvals using Flow Designer
+        <br>
 
-    <br>
+        ✔ Service Portal and Catalog
 
-    ✔ Service Portal and Catalog
+        <br>
 
-    <br>
+        ✔ Role-based access control using ACLs
 
-    ✔ Role-based access control using ACLs
+        <br>
 
-    <br>
+        ✔ Reports and administrative dashboards
 
-    ✔ Reports and administrative dashboards
+        <br>
+        <br>
 
-    <br>
-    <br>
+        <b>
+            Tech Stack:
+        </b>
 
-    <b>
-        Tech Stack:
-    </b>
+        ServiceNow, Flow Designer, JavaScript, Glide Script, Service Portal
 
-    ServiceNow, Flow Designer, JavaScript, Glide Script, Service Portal
+        <br>
+        <br>
 
-    <br>
-    <br>
+        <a
+            href="https://github.com/santhoshakkisetti/Smart-Campus-Management-System"
+            target="_blank"
+            class="project-link">
 
-    <a
-        href="https://github.com/santhoshakkisetti/Smart-Campus-Management-System"
-        target="_blank"
-        class="project-link">
+            View Project
 
-        View Project
+        </a>
 
-    </a>
+    </div>
 
-</div>
 
 
     <!-- EMPLOYEE MANAGEMENT -->
 
     <div class="card">
 
-
         <b>
             📊 Employee Management System (MySQL)
         </b>
 
-
         <br>
         <br>
-
 
         A database management system to handle employee records
         with structured SQL queries.
 
-
         <br>
         <br>
-
 
         <b>
             Features:
         </b>
 
-
         <br>
-
 
         ✔ Add / Update / Delete employee data
 
@@ -1244,10 +1462,8 @@ footer{
 
         ✔ MySQL database design
 
-
         <br>
         <br>
-
 
         <b>
             Tech Stack:
@@ -1255,10 +1471,8 @@ footer{
 
         MySQL, SQL
 
-
         <br>
         <br>
-
 
         <a
             href="https://github.com/santhoshakkisetti/Employee-Management-System/blob/main/Employee%20Management%20System"
@@ -1269,7 +1483,6 @@ footer{
 
         </a>
 
-
     </div>
 
 
@@ -1278,31 +1491,24 @@ footer{
 
     <div class="card">
 
-
         <b>
             🎨 ClinicConnect (UI/UX Design)
         </b>
 
-
         <br>
         <br>
-
 
         A modern healthcare appointment booking system designed
         in Figma focusing on user experience.
 
-
         <br>
         <br>
-
 
         <b>
             Features:
         </b>
 
-
         <br>
-
 
         ✔ Appointment booking UI
 
@@ -1314,10 +1520,8 @@ footer{
 
         ✔ Mobile-friendly interface
 
-
         <br>
         <br>
-
 
         <b>
             Tool Used:
@@ -1325,10 +1529,8 @@ footer{
 
         Figma
 
-
         <br>
         <br>
-
 
         <a
             href="https://www.figma.com/proto/0NLdLJKXBCOJsQVdLi9Fum/ClinicConnect?node-id=1-4&viewport=132%2C326%2C0.06&t=xkBs7A9qkzEE4gfU-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=134%3A76&show-proto-sidebar=1&page-id=0%3A1"
@@ -1339,9 +1541,7 @@ footer{
 
         </a>
 
-
     </div>
-
 
 </section>
 
@@ -1352,7 +1552,6 @@ footer{
 ======================= -->
 
 <section id="contact">
-
 
     <h2>
         Let's Connect
@@ -1366,14 +1565,10 @@ footer{
     </p>
 
 
-
-    <!-- FORM -->
-
     <form id="contactForm">
 
 
         <div class="name-row">
-
 
             <input
                 type="text"
@@ -1388,9 +1583,7 @@ footer{
                 placeholder="Last Name"
                 required>
 
-
         </div>
-
 
 
         <input
@@ -1400,13 +1593,11 @@ footer{
             required>
 
 
-
         <input
             type="text"
             id="subject"
             placeholder="Subject"
             required>
-
 
 
         <textarea
@@ -1416,16 +1607,13 @@ footer{
             required></textarea>
 
 
-
         <button type="submit">
 
             Send Message
 
         </button>
 
-
     </form>
-
 
 
     <!-- SOCIAL LINKS -->
@@ -1439,11 +1627,9 @@ footer{
             href="https://github.com/santhoshakkisetti"
             target="_blank">
 
-
             <img
                 src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
                 alt="GitHub">
-
 
         </a>
 
@@ -1455,11 +1641,9 @@ footer{
             href="https://linkedin.com/in/akkisetti-santhosh"
             target="_blank">
 
-
             <img
                 src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
                 alt="LinkedIn">
-
 
         </a>
 
@@ -1470,11 +1654,9 @@ footer{
         <a
             href="tel:9912997225">
 
-
             <img
                 src="https://cdn-icons-png.flaticon.com/512/597/597177.png"
                 alt="Phone">
-
 
         </a>
 
@@ -1485,17 +1667,13 @@ footer{
         <a
             href="mailto:santhoshakkisetti26@gmail.com">
 
-
             <img
                 src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
                 alt="Email">
 
-
         </a>
 
-
     </div>
-
 
 </section>
 
@@ -1507,7 +1685,7 @@ footer{
 
 <footer>
 
-    © 2025 SANTHOSH AKKISETTI. All rights reserved.
+    © 2026 SANTHOSH AKKISETTI. All rights reserved.
 
 </footer>
 
@@ -1519,11 +1697,9 @@ footer{
 
 <script>
 
-
 document
 .getElementById("contactForm")
 .addEventListener("submit", function(e){
-
 
     e.preventDefault();
 
@@ -1548,9 +1724,6 @@ document
         document.getElementById("message").value;
 
 
-
-    /* EMAIL BODY */
-
     let mailBody =
 
 `Name: ${firstName} ${lastName}
@@ -1561,9 +1734,6 @@ Message:
 ${message}`;
 
 
-
-    /* MAIL LINK */
-
     let mailtoLink =
 
         `mailto:santhoshakkisetti26@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(mailBody)}`;
@@ -1571,9 +1741,7 @@ ${message}`;
 
     window.location.href = mailtoLink;
 
-
 });
-
 
 </script>
 
