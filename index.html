@@ -3,945 +3,908 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Santhosh Akkisetti | Portfolio</title>
+    <title>Santhosh Akkisetti | Portfolio</title>
 
-<style>
+    <style>
 
-/* =======================
-   GLOBAL RESET
-======================= */
+        /* =========================
+           GLOBAL
+        ========================= */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-    scroll-behavior:smooth;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
 
+        body {
+            background: #0f172a;
+            color: white;
+        }
 
-/* =======================
-   BODY
-======================= */
 
-body{
-    background:#0f172a;
-    color:white;
-}
+        /* =========================
+           NAVBAR
+        ========================= */
 
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
 
-/* =======================
-   NAVBAR
-======================= */
+            background: rgba(15, 23, 42, 0.95);
 
-nav{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-    background:rgba(17,24,39,0.95);
+            padding: 18px 32px;
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+            z-index: 1000;
 
-    padding:15px 30px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.45);
 
-    z-index:1000;
+            backdrop-filter: blur(10px);
+        }
 
-    box-shadow:0 2px 10px rgba(0,0,0,0.5);
+        nav h2 {
+            color: #38bdf8;
+            font-size: 26px;
 
-    backdrop-filter:blur(10px);
-}
+            opacity: 0;
+            animation: navbarName 1s ease forwards;
+        }
 
-nav h2{
-    color:#38bdf8;
-}
+        @keyframes navbarName {
 
-nav a{
-    color:white;
-    margin-left:15px;
-    text-decoration:none;
-    transition:0.3s;
-}
+            0% {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
 
-nav a:hover{
-    color:#38bdf8;
-}
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
 
+        nav div {
+            display: flex;
+            align-items: center;
+        }
 
-/* =======================
-   HERO SECTION
-======================= */
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
 
-.hero{
+        nav a:hover {
+            color: #38bdf8;
+        }
 
-    min-height:100vh;
 
-    display:flex;
+        /* =========================
+           HOME / HERO
+        ========================= */
 
-    justify-content:space-between;
+        .hero {
+            min-height: 100vh;
 
-    align-items:center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-    padding:120px 80px 60px;
+            padding: 120px 80px 60px;
 
-    gap:60px;
+            gap: 70px;
 
-}
+            overflow: hidden;
+        }
 
 
-/* HERO LEFT */
+        /* =========================
+           LEFT SIDE
+        ========================= */
 
-.hero-left{
+        .hero-left {
+            flex: 1;
+            max-width: 600px;
+        }
 
-    flex:1;
+        .hero small {
+            color: #cbd5e1;
+            font-size: 19px;
 
-    max-width:600px;
+            opacity: 0;
 
-}
+            animation: helloAnimation 1s ease forwards;
+        }
 
+        @keyframes helloAnimation {
 
-/* HELLO TEXT */
+            0% {
+                opacity: 0;
+                transform: translateY(-25px);
+            }
 
-.hero small{
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    color:#cbd5e1;
 
-    font-size:18px;
+        /* =========================
+           NAME
+        ========================= */
 
-    opacity:0;
+        .hero h1 {
+            margin-top: 12px;
 
-    transform:translateY(-20px);
+            font-size: 58px;
 
-    animation:fadeDown 1s ease forwards;
+            line-height: 1.15;
 
-}
+            color: #38bdf8;
 
+            min-height: 135px;
+        }
 
-/* ANIMATION */
+        .animated-name {
+            display: inline-block;
 
-@keyframes fadeDown{
+            white-space: nowrap;
 
-    to{
+            overflow: hidden;
 
-        opacity:1;
+            width: 0;
 
-        transform:translateY(0);
+            border-right: 4px solid #38bdf8;
 
-    }
+            animation:
+                typing 2.5s steps(18, end) 0.5s forwards,
+                blinkCursor 0.7s step-end infinite,
+                nameGlow 2s ease-in-out 3s infinite alternate;
+        }
 
-}
+        @keyframes typing {
 
+            from {
+                width: 0;
+            }
 
-/* NAME */
+            to {
+                width: 100%;
+            }
+        }
 
-.hero h1{
+        @keyframes blinkCursor {
 
-    font-size:52px;
+            0%,
+            100% {
+                border-color: #38bdf8;
+            }
 
-    color:#38bdf8;
+            50% {
+                border-color: transparent;
+            }
+        }
 
-    margin-top:10px;
+        @keyframes nameGlow {
 
-    opacity:0;
+            from {
+                text-shadow:
+                    0 0 0 rgba(56, 189, 248, 0);
+            }
 
-    transform:translateX(-120px);
+            to {
+                text-shadow:
+                    0 0 10px rgba(56, 189, 248, 0.6),
+                    0 0 25px rgba(56, 189, 248, 0.4),
+                    0 0 45px rgba(56, 189, 248, 0.2);
+            }
+        }
 
-    animation:slideName 1.2s ease forwards;
 
-    animation-delay:0.3s;
+        /* =========================
+           HERO DESCRIPTION
+        ========================= */
 
-}
+        .hero p {
+            margin-top: 15px;
 
+            color: #cbd5e1;
 
-/* NAME ANIMATION */
+            line-height: 1.8;
 
-@keyframes slideName{
+            font-size: 16px;
 
-    to{
+            opacity: 0;
 
-        opacity:1;
+            animation:
+                fadeUp 1s ease 2.5s forwards;
+        }
 
-        transform:translateX(0);
+        @keyframes fadeUp {
 
-    }
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
 
-}
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
 
-/* HERO TEXT */
+        /* =========================
+           BUTTONS
+        ========================= */
 
-.hero p{
+        .btn {
+            margin-top: 25px;
 
-    margin-top:15px;
+            display: flex;
 
-    color:#cbd5e1;
+            gap: 15px;
 
-    line-height:1.8;
+            opacity: 0;
 
-    font-size:16px;
+            animation:
+                fadeUp 1s ease 2.8s forwards;
+        }
 
-}
+        .btn a {
+            padding: 13px 24px;
 
+            background: #38bdf8;
 
-/* =======================
-   BUTTONS
-======================= */
+            color: #020617;
 
-.btn{
+            text-decoration: none;
 
-    margin-top:25px;
+            border-radius: 8px;
 
-    display:flex;
+            font-weight: bold;
 
-    gap:15px;
+            transition: 0.3s;
+        }
 
-}
+        .btn a:hover {
+            transform: translateY(-4px);
 
-.btn a{
+            box-shadow:
+                0 8px 25px rgba(56, 189, 248, 0.4);
+        }
 
-    padding:12px 22px;
 
-    background:#38bdf8;
+        /* =========================
+           RIGHT SIDE IMAGE
+        ========================= */
 
-    color:#020617;
+        .hero-right {
+            flex: 1;
 
-    text-decoration:none;
+            display: flex;
 
-    border-radius:8px;
+            justify-content: center;
 
-    font-weight:bold;
+            align-items: center;
 
-    transition:0.3s;
+            opacity: 0;
 
-}
+            animation:
+                imageEntrance 1.3s ease 0.7s forwards;
+        }
 
-.btn a:hover{
+        @keyframes imageEntrance {
 
-    transform:translateY(-3px);
+            0% {
+                opacity: 0;
+                transform: translateX(100px) scale(0.7);
+            }
 
-    box-shadow:0 8px 20px rgba(56,189,248,0.3);
+            60% {
+                opacity: 1;
+                transform: translateX(-10px) scale(1.05);
+            }
 
-}
+            100% {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
 
 
-/* =======================
-   HERO IMAGE
-======================= */
+        /* =========================
+           IMAGE CIRCLE
+        ========================= */
 
-.hero-right{
+        .photo-box {
+            width: 350px;
+            height: 350px;
 
-    flex:1;
+            border-radius: 50%;
 
-    display:flex;
+            border: 4px solid #38bdf8;
 
-    justify-content:center;
+            overflow: hidden;
 
-    align-items:center;
+            background: #1e293b;
 
-}
+            position: relative;
 
+            box-shadow:
+                0 0 20px rgba(56, 189, 248, 0.5),
+                0 0 50px rgba(56, 189, 248, 0.25),
+                0 0 90px rgba(56, 189, 248, 0.1);
 
-/* OUTER CIRCLE */
+            animation: floatingImage 4s ease-in-out infinite;
+        }
 
-.photo-box{
+        @keyframes floatingImage {
 
-    width:330px;
+            0%,
+            100% {
+                transform: translateY(0);
+            }
 
-    height:330px;
+            50% {
+                transform: translateY(-12px);
+            }
+        }
 
-    border-radius:50%;
 
-    border:4px solid #38bdf8;
+        /* =========================
+           IMAGE
+        ========================= */
 
-    overflow:hidden;
+        .photo-box img {
+            width: 100%;
+            height: 100%;
 
-    position:relative;
+            display: block;
 
-    background:#1e293b;
+            object-fit: cover;
 
-    box-shadow:
+            object-position: center;
 
-        0 0 20px rgba(56,189,248,0.4),
+            transition: 0.5s ease;
+        }
 
-        0 0 50px rgba(56,189,248,0.15);
+        .photo-box:hover img {
+            transform: scale(1.08);
+        }
 
-    transition:0.4s ease;
+        .photo-box:hover {
+            box-shadow:
+                0 0 30px rgba(56, 189, 248, 0.8),
+                0 0 70px rgba(56, 189, 248, 0.4);
+        }
 
-}
 
+        /* =========================
+           SECTIONS
+        ========================= */
 
-/* IMAGE */
+        section {
+            padding: 90px 20px;
 
-.photo-box img{
+            max-width: 1000px;
 
-    width:100%;
+            margin: auto;
+        }
 
-    height:100%;
+        h2 {
+            color: #38bdf8;
 
-    object-fit:cover;
+            margin-bottom: 20px;
 
-    object-position:center;
+            font-size: 32px;
+        }
 
-    display:block;
 
-    transition:0.5s ease;
+        /* =========================
+           ABOUT
+        ========================= */
 
-}
+        .about-text {
+            color: #cbd5e1;
 
+            line-height: 1.8;
 
-/* IMAGE HOVER */
+            margin-bottom: 35px;
+        }
 
-.photo-box:hover{
+        .grid-3 {
+            display: grid;
 
-    transform:scale(1.04);
+            grid-template-columns: repeat(3, 1fr);
 
-    box-shadow:
+            gap: 20px;
+        }
 
-        0 0 25px rgba(56,189,248,0.6),
 
-        0 0 70px rgba(56,189,248,0.25);
+        /* =========================
+           CARDS
+        ========================= */
 
-}
+        .card {
+            background: #1e293b;
 
+            padding: 20px;
 
-/* IMAGE ZOOM */
+            border-radius: 12px;
 
-.photo-box:hover img{
+            transition: 0.3s;
 
-    transform:scale(1.05);
+            border: 1px solid transparent;
+        }
 
-}
+        .card:hover {
+            transform: translateY(-5px);
 
+            box-shadow:
+                0 0 15px rgba(56, 189, 248, 0.3);
 
-/* =======================
-   SECTION COMMON
-======================= */
+            border-color:
+                rgba(56, 189, 248, 0.3);
+        }
 
-section{
+        .icon-title {
+            font-weight: bold;
 
-    padding:90px 20px;
+            margin-bottom: 10px;
 
-    max-width:1000px;
+            display: flex;
 
-    margin:auto;
+            align-items: center;
 
-}
+            gap: 8px;
 
-h2{
+            font-size: 18px;
+        }
 
-    color:#38bdf8;
 
-    margin-bottom:20px;
+        /* =========================
+           SKILLS
+        ========================= */
 
-    font-size:32px;
+        .skills-group {
+            margin-bottom: 20px;
+        }
 
-}
+        .skills-group span {
+            display: inline-block;
 
+            background: #334155;
 
-/* =======================
-   ABOUT
-======================= */
+            padding: 7px 14px;
 
-.about-text{
+            margin: 6px;
 
-    color:#cbd5e1;
+            border-radius: 20px;
 
-    line-height:1.8;
+            transition: 0.3s;
+        }
 
-    margin-bottom:35px;
+        .skills-group span:hover {
+            background: #38bdf8;
 
-}
+            color: black;
 
+            transform: translateY(-2px);
+        }
 
-/* ABOUT GRID */
 
-.grid-3{
+        /* =========================
+           CERTIFICATIONS
+        ========================= */
 
-    display:grid;
+        .certifications-grid {
+            display: grid;
 
-    grid-template-columns:repeat(3,1fr);
+            grid-template-columns: repeat(3, 1fr);
 
-    gap:20px;
+            gap: 20px;
+        }
 
-}
+        .certification-card {
+            background: #1e293b;
 
+            padding: 25px;
 
-/* CARD */
+            border-radius: 12px;
 
-.card{
+            transition: 0.3s;
 
-    background:#1e293b;
+            border: 1px solid transparent;
+        }
 
-    padding:20px;
+        .certification-card:hover {
+            transform: translateY(-5px);
 
-    border-radius:12px;
+            box-shadow:
+                0 0 15px rgba(56, 189, 248, 0.3);
 
-    transition:0.3s;
+            border-color: #38bdf8;
+        }
 
-    border:1px solid transparent;
+        .certification-icon {
+            font-size: 35px;
 
-}
+            margin-bottom: 15px;
+        }
 
-.card:hover{
+        .certification-card h3 {
+            color: white;
 
-    transform:translateY(-5px);
+            margin-bottom: 10px;
 
-    box-shadow:0 0 15px rgba(56,189,248,0.3);
+            font-size: 19px;
 
-    border-color:rgba(56,189,248,0.3);
+            line-height: 1.4;
+        }
 
-}
+        .certification-card p {
+            color: #cbd5e1;
 
+            line-height: 1.6;
 
-/* CARD TITLE */
+            margin-bottom: 15px;
+        }
 
-.icon-title{
+        .certification-badge {
+            display: inline-block;
 
-    font-weight:bold;
+            background: #334155;
 
-    margin-bottom:10px;
+            color: #38bdf8;
 
-    display:flex;
+            padding: 6px 12px;
 
-    align-items:center;
+            border-radius: 20px;
 
-    gap:8px;
+            font-size: 14px;
 
-    font-size:18px;
+            font-weight: bold;
+        }
 
-}
 
+        /* =========================
+           EXPERIENCE
+        ========================= */
 
-/* =======================
-   SKILLS
-======================= */
+        .exp {
+            background: #1e293b;
 
-.skills-group{
+            padding: 20px;
 
-    margin-bottom:20px;
+            border-radius: 12px;
 
-}
+            line-height: 1.8;
 
-.skills-group span{
+            border-left: 4px solid #38bdf8;
+        }
 
-    display:inline-block;
 
-    background:#334155;
+        /* =========================
+           PROJECTS
+        ========================= */
 
-    padding:7px 14px;
+        #projects .card {
+            margin-bottom: 20px;
 
-    margin:6px;
+            line-height: 1.7;
+        }
 
-    border-radius:20px;
+        .project-link {
+            display: inline-block;
 
-    transition:0.3s;
+            margin-top: 10px;
 
-}
+            background: #38bdf8;
 
-.skills-group span:hover{
+            color: black;
 
-    background:#38bdf8;
+            padding: 10px 15px;
 
-    color:black;
+            text-decoration: none;
 
-    transform:translateY(-2px);
+            border-radius: 6px;
 
-}
+            font-weight: bold;
 
+            transition: 0.3s;
+        }
 
-/* =======================
-   CERTIFICATIONS
-======================= */
+        .project-link:hover {
+            transform: translateY(-2px);
 
-.certifications-grid{
+            box-shadow:
+                0 5px 15px rgba(56, 189, 248, 0.3);
+        }
 
-    display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+        /* =========================
+           CONTACT
+        ========================= */
 
-    gap:20px;
+        input,
+        textarea {
+            width: 100%;
 
-}
+            padding: 12px;
 
+            margin: 10px 0;
 
-.certification-card{
+            border: none;
 
-    background:#1e293b;
+            border-radius: 6px;
 
-    padding:25px;
+            background: #1e293b;
 
-    border-radius:12px;
+            color: white;
 
-    transition:0.3s;
+            outline: none;
 
-    border:1px solid transparent;
+            border: 1px solid transparent;
 
-}
+            transition: 0.3s;
+        }
 
+        input:focus,
+        textarea:focus {
+            border-color: #38bdf8;
 
-.certification-card:hover{
+            box-shadow:
+                0 0 8px rgba(56, 189, 248, 0.15);
+        }
 
-    transform:translateY(-5px);
+        .name-row {
+            display: flex;
 
-    box-shadow:0 0 15px rgba(56,189,248,0.3);
+            gap: 10px;
+        }
 
-    border-color:#38bdf8;
+        .name-row input {
+            width: 100%;
+        }
 
-}
+        button {
+            padding: 12px 22px;
 
+            background: #38bdf8;
 
-.certification-icon{
+            border: none;
 
-    font-size:35px;
+            border-radius: 6px;
 
-    margin-bottom:15px;
+            cursor: pointer;
 
-}
+            font-weight: bold;
 
+            transition: 0.3s;
+        }
 
-.certification-card h3{
+        button:hover {
+            transform: translateY(-2px);
 
-    color:white;
+            box-shadow:
+                0 5px 15px rgba(56, 189, 248, 0.3);
+        }
 
-    margin-bottom:10px;
 
-    font-size:19px;
+        /* =========================
+           SOCIAL LINKS
+        ========================= */
 
-    line-height:1.4;
+        .social-links {
+            display: flex;
 
-}
+            justify-content: center;
 
+            gap: 25px;
 
-.certification-card p{
+            margin-top: 40px;
 
-    color:#cbd5e1;
+            margin-bottom: 20px;
+        }
 
-    line-height:1.6;
+        .social-links a {
+            width: 50px;
 
-    margin-bottom:15px;
+            height: 50px;
 
-}
+            display: flex;
 
+            align-items: center;
 
-.certification-badge{
+            justify-content: center;
 
-    display:inline-block;
+            background: #1e293b;
 
-    background:#334155;
+            border-radius: 50%;
 
-    color:#38bdf8;
+            transition: 0.3s;
 
-    padding:6px 12px;
+            border: 1px solid transparent;
+        }
 
-    border-radius:20px;
+        .social-links img {
+            width: 28px;
 
-    font-size:14px;
+            height: 28px;
 
-    font-weight:bold;
+            object-fit: contain;
+        }
 
-}
+        .social-links a:hover {
+            transform: translateY(-5px) scale(1.08);
 
+            border-color: #38bdf8;
 
-/* =======================
-   EXPERIENCE
-======================= */
+            box-shadow:
+                0 0 15px rgba(56, 189, 248, 0.3);
+        }
 
-.exp{
 
-    background:#1e293b;
+        /* =========================
+           FOOTER
+        ========================= */
 
-    padding:20px;
+        footer {
+            text-align: center;
 
-    border-radius:12px;
+            padding: 20px;
 
-    line-height:1.8;
+            background: #111827;
 
-    border-left:4px solid #38bdf8;
+            margin-top: 20px;
 
-}
+            color: #cbd5e1;
+        }
 
 
-/* =======================
-   PROJECTS
-======================= */
+        /* =========================
+           TABLET
+        ========================= */
 
-#projects .card{
+        @media (max-width: 900px) {
 
-    margin-bottom:20px;
+            .hero {
+                padding-left: 40px;
+                padding-right: 40px;
 
-    line-height:1.7;
+                gap: 30px;
+            }
 
-}
+            .hero h1 {
+                font-size: 48px;
+            }
 
+            .photo-box {
+                width: 300px;
+                height: 300px;
+            }
+        }
 
-.project-link{
 
-    display:inline-block;
+        /* =========================
+           MOBILE
+        ========================= */
 
-    margin-top:10px;
+        @media (max-width: 768px) {
 
-    background:#38bdf8;
+            nav {
+                padding: 15px 20px;
+            }
 
-    color:black;
+            nav h2 {
+                font-size: 20px;
+            }
 
-    padding:10px 15px;
+            nav div {
+                display: none;
+            }
 
-    text-decoration:none;
+            .hero {
 
-    border-radius:6px;
+                flex-direction: column;
 
-    font-weight:bold;
+                text-align: center;
 
-    transition:0.3s;
+                padding:
+                    130px 20px 60px;
 
-}
+                min-height: auto;
+            }
 
+            .hero-left {
+                max-width: 100%;
+            }
 
-.project-link:hover{
+            .hero h1 {
+                font-size: 42px;
 
-    transform:translateY(-2px);
+                min-height: 100px;
+            }
 
-    box-shadow:0 5px 15px rgba(56,189,248,0.3);
+            .hero p {
+                font-size: 15px;
+            }
 
-}
+            .btn {
+                justify-content: center;
+            }
 
+            .hero-right {
+                margin-top: 30px;
+            }
 
-/* =======================
-   CONTACT FORM
-======================= */
+            .photo-box {
+                width: 270px;
+                height: 270px;
+            }
 
-input,
-textarea{
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
 
-    width:100%;
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
 
-    padding:12px;
+            .name-row {
+                flex-direction: column;
+            }
+        }
 
-    margin:10px 0;
 
-    border:none;
+        /* =========================
+           SMALL MOBILE
+        ========================= */
 
-    border-radius:6px;
+        @media (max-width: 450px) {
 
-    background:#1e293b;
+            .hero h1 {
+                font-size: 34px;
 
-    color:white;
+                min-height: 80px;
+            }
 
-    outline:none;
+            .photo-box {
+                width: 230px;
+                height: 230px;
+            }
 
-    border:1px solid transparent;
+            h2 {
+                font-size: 28px;
+            }
 
-    transition:0.3s;
+            .btn {
+                flex-direction: column;
 
-}
+                align-items: center;
+            }
 
+            .btn a {
+                width: 180px;
+            }
+        }
 
-input:focus,
-textarea:focus{
-
-    border-color:#38bdf8;
-
-    box-shadow:0 0 8px rgba(56,189,248,0.15);
-
-}
-
-
-/* NAME ROW */
-
-.name-row{
-
-    display:flex;
-
-    gap:10px;
-
-}
-
-
-.name-row input{
-
-    width:100%;
-
-}
-
-
-/* BUTTON */
-
-button{
-
-    padding:12px 22px;
-
-    background:#38bdf8;
-
-    border:none;
-
-    border-radius:6px;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    transition:0.3s;
-
-}
-
-
-button:hover{
-
-    transform:translateY(-2px);
-
-    box-shadow:0 5px 15px rgba(56,189,248,0.3);
-
-}
-
-
-/* =======================
-   SOCIAL LINKS
-======================= */
-
-.social-links{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:25px;
-
-    margin-top:40px;
-
-    margin-bottom:20px;
-
-}
-
-
-/* ICON STYLE */
-
-.social-links a{
-
-    width:50px;
-
-    height:50px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:#1e293b;
-
-    border-radius:50%;
-
-    transition:0.3s;
-
-    border:1px solid transparent;
-
-}
-
-
-.social-links img{
-
-    width:28px;
-
-    height:28px;
-
-    object-fit:contain;
-
-}
-
-
-/* HOVER */
-
-.social-links a:hover{
-
-    transform:translateY(-5px) scale(1.08);
-
-    border-color:#38bdf8;
-
-    box-shadow:0 0 15px rgba(56,189,248,0.3);
-
-}
-
-
-/* =======================
-   FOOTER
-======================= */
-
-footer{
-
-    text-align:center;
-
-    padding:20px;
-
-    background:#111827;
-
-    margin-top:20px;
-
-    color:#cbd5e1;
-
-}
-
-
-/* =======================
-   RESPONSIVE
-======================= */
-
-@media(max-width:768px){
-
-    nav{
-
-        padding:15px 20px;
-
-    }
-
-
-    nav h2{
-
-        font-size:20px;
-
-    }
-
-
-    nav div{
-
-        display:none;
-
-    }
-
-
-    .hero{
-
-        flex-direction:column;
-
-        text-align:center;
-
-        padding:130px 20px 60px;
-
-        min-height:auto;
-
-    }
-
-
-    .hero-left{
-
-        max-width:100%;
-
-    }
-
-
-    .hero h1{
-
-        font-size:38px;
-
-    }
-
-
-    .hero p{
-
-        font-size:15px;
-
-    }
-
-
-    .btn{
-
-        justify-content:center;
-
-    }
-
-
-    .hero-right{
-
-        margin-top:30px;
-
-    }
-
-
-    .photo-box{
-
-        width:250px;
-
-        height:250px;
-
-    }
-
-
-    .grid-3{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .certifications-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .name-row{
-
-        flex-direction:column;
-
-    }
-
-
-}
-
-
-/* =======================
-   SMALL MOBILE
-======================= */
-
-@media(max-width:450px){
-
-    .hero h1{
-
-        font-size:32px;
-
-    }
-
-
-    .photo-box{
-
-        width:220px;
-
-        height:220px;
-
-    }
-
-
-    h2{
-
-        font-size:28px;
-
-    }
-
-
-    .btn{
-
-        flex-direction:column;
-
-        align-items:center;
-
-    }
-
-
-    .btn a{
-
-        width:180px;
-
-    }
-
-}
-
-</style>
+    </style>
 
 </head>
 
@@ -949,801 +912,816 @@ footer{
 <body>
 
 
-<!-- =======================
-     NAVBAR
-======================= -->
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
-<nav>
+    <nav>
 
-    <h2>Santhosh</h2>
+        <h2>
+            Santhosh Akkisetti
+        </h2>
 
-    <div>
+        <div>
 
-        <a href="#home">Home</a>
+            <a href="#home">Home</a>
 
-        <a href="#about">About</a>
+            <a href="#about">About</a>
 
-        <a href="#skills">Skills</a>
+            <a href="#skills">Skills</a>
 
-        <a href="#certifications">Certifications</a>
+            <a href="#certifications">
+                Certifications
+            </a>
 
-        <a href="#experience">Experience</a>
+            <a href="#experience">
+                Experience
+            </a>
 
-        <a href="#projects">Projects</a>
+            <a href="#projects">
+                Projects
+            </a>
 
-        <a href="#contact">Contact</a>
+            <a href="#contact">
+                Contact
+            </a>
 
-    </div>
+        </div>
 
-</nav>
-
-
-
-<!-- =======================
-     HERO SECTION
-======================= -->
-
-<section class="hero" id="home">
+    </nav>
 
 
-    <div class="hero-left">
+    <!-- =========================
+         HOME PAGE
+    ========================= -->
 
-        <small>Hello, I am</small>
+    <section class="hero" id="home">
 
-        <h1>Santhosh Akkisetti</h1>
 
-        <p>
+        <!-- LEFT SIDE -->
 
-            B.Tech EEE student transitioning into IT with strong analytical
-            and problem-solving skills. Focused on building scalable,
-            user-friendly digital solutions using Python, Cloud, and UI/UX.
+        <div class="hero-left">
+
+            <small>
+                Hello, I am
+            </small>
+
+
+            <!--
+                ANIMATED NAME
+            -->
+
+            <h1>
+
+                <span class="animated-name">
+                    Santhosh Akkisetti
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                B.Tech EEE student transitioning into IT with strong analytical
+                and problem-solving skills. Focused on building scalable,
+                user-friendly digital solutions using Python, AWS Cloud,Servicenow(CSA & CAD) and UI/UX.
+
+            </p>
+
+
+            <div class="btn">
+
+                <a href="#projects">
+                    View Work
+                </a>
+
+                <a href="#contact">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             PROFILE IMAGE
+        ========================= -->
+
+        <div class="hero-right">
+
+            <div class="photo-box">
+
+                <!--
+                    IMPORTANT:
+                    img.jpeg MUST be in the same folder
+                    as this index.html file.
+                -->
+
+                <img
+                    src="./img.jpeg?v=20260813"
+                    alt="Santhosh Akkisetti Profile Photo">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+
+        <h2>
+            About Me
+        </h2>
+
+        <p class="about-text">
+
+            I am a B.Tech Electrical and Electronics Engineering student
+            transitioning into the IT field. I have strong analytical thinking
+            and problem-solving skills. I am passionate about building scalable
+            applications and user-friendly digital experiences using modern
+            technologies like Python, AWS, ServiceNow (CSA, CAD), and UI/UX design.
 
         </p>
 
 
-        <div class="btn">
+        <div class="grid-3">
 
-            <a href="#projects">
-                View Work
+
+            <div class="card">
+
+                <div class="icon-title">
+                    🎓 Education
+                </div>
+
+                B.Tech EEE
+
+                <br>
+
+                CGPA: 7.8/10
+
+                <br>
+
+                Gayatri Vidya Parishad College of Engineering
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon-title">
+                    🏠 Location
+                </div>
+
+                Andhra Pradesh, India
+
+                <br>
+
+                Open to Remote Work
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon-title">
+                    💡 Interests
+                </div>
+
+                UI/UX Design
+
+                <br>
+
+                Cloud Computing
+
+                <br>
+
+                Web Development
+
+                <br>
+
+                Problem Solving
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section id="skills">
+
+        <h2>
+            Skills
+        </h2>
+
+
+        <div class="skills-group">
+
+            <b>Programming:</b>
+
+            <br>
+
+            <span>Python</span>
+
+        </div>
+
+
+        <div class="skills-group">
+
+            <b>Frontend:</b>
+
+            <br>
+
+            <span>HTML</span>
+
+            <span>CSS</span>
+
+            <span>JavaScript</span>
+
+        </div>
+
+
+        <div class="skills-group">
+
+            <b>Database:</b>
+
+            <br>
+
+            <span>MySQL</span>
+
+        </div>
+
+
+        <div class="skills-group">
+
+            <b>Cloud:</b>
+
+            <br>
+
+            <span>AWS EC2</span>
+
+            <span>AWS S3</span>
+
+            <span>AWS IAM</span>
+
+            <span>AWS Lambda</span>
+
+        </div>
+
+
+        <div class="skills-group">
+
+            <b>Design:</b>
+
+            <br>
+
+            <span>UI/UX (Figma)</span>
+
+        </div>
+
+
+        <div class="skills-group">
+
+            <b>ServiceNow:</b>
+
+            <br>
+
+            <span>CSA</span>
+
+            <span>CAD</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CERTIFICATIONS
+    ========================= -->
+
+    <section id="certifications">
+
+        <h2>
+            Certifications
+        </h2>
+
+
+        <div class="certifications-grid">
+
+
+            <div class="certification-card">
+
+                <div class="certification-icon">
+                    🏆
+                </div>
+
+                <h3>
+                    ServiceNow Certified System Administrator
+                </h3>
+
+                <p>
+                    Certified in ServiceNow platform administration,
+                    configuration, and core platform capabilities.
+                </p>
+
+                <span class="certification-badge">
+                    ServiceNow CSA
+                </span>
+
+            </div>
+
+
+            <div class="certification-card">
+
+                <div class="certification-icon">
+                    🏆
+                </div>
+
+                <h3>
+                    ServiceNow Certified Application Developer
+                </h3>
+
+                <p>
+                    Certified in ServiceNow application development,
+                    application configuration, and platform development.
+                </p>
+
+                <span class="certification-badge">
+                    ServiceNow CAD
+                </span>
+
+            </div>
+
+
+            <div class="certification-card">
+
+                <div class="certification-icon">
+                    ☁️
+                </div>
+
+                <h3>
+                    AWS Certified Cloud Practitioner
+                </h3>
+
+                <p>
+                    Certification covering AWS Cloud concepts,
+                    core services, security, architecture, and pricing.
+                </p>
+
+                <span class="certification-badge">
+                    AWS Cloud Practitioner
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPERIENCE
+    ========================= -->
+
+    <section id="experience">
+
+        <h2>
+            Experience
+        </h2>
+
+
+        <div class="exp">
+
+            <b>
+                Cloud & ServiceNow Intern - SmartBridge
+            </b>
+
+            <br>
+            <br>
+
+            • AWS EC2, S3, RDS, Lambda hands-on experience
+
+            <br>
+
+            • ServiceNow CSA & CAD platform development
+
+            <br>
+
+            • Python-based automation tasks
+
+            <br>
+
+            • UI/UX support and cloud deployment practice
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section id="projects">
+
+        <h2>
+            Projects
+        </h2>
+
+
+        <!-- SMART CAMPUS -->
+
+        <div class="card">
+
+            <b>
+                🎓 Smart Campus Management System (ServiceNow)
+            </b>
+
+            <br>
+            <br>
+
+            A ServiceNow-based campus management platform that digitizes
+            academic and administrative workflows for students, faculty,
+            and administrators.
+
+            <br>
+            <br>
+
+            <b>
+                Features:
+            </b>
+
+            <br>
+
+            ✔ Student and faculty request management
+
+            <br>
+
+            ✔ Course registration and enrollment workflows
+
+            <br>
+
+            ✔ Faculty leave application management
+
+            <br>
+
+            ✔ Facility complaint management
+
+            <br>
+
+            ✔ Automated multi-stage approvals using Flow Designer
+
+            <br>
+
+            ✔ Service Portal and Catalog
+
+            <br>
+
+            ✔ Role-based access control using ACLs
+
+            <br>
+
+            ✔ Reports and administrative dashboards
+
+            <br>
+            <br>
+
+            <b>
+                Tech Stack:
+            </b>
+
+            <br>
+
+            ServiceNow, Flow Designer, JavaScript, Glide Script, Service Portal
+
+            <br>
+            <br>
+
+            <a
+                href="https://github.com/santhoshakkisetti/Smart-Campus-Management-System"
+                target="_blank"
+                class="project-link">
+
+                View Project
+
             </a>
 
-            <a href="#contact">
-                Contact Me
+        </div>
+
+
+        <!-- EMPLOYEE MANAGEMENT -->
+
+        <div class="card">
+
+            <b>
+                📊 Employee Management System (MySQL)
+            </b>
+
+            <br>
+            <br>
+
+            A database management system to handle employee records
+            with structured SQL queries.
+
+            <br>
+            <br>
+
+            <b>
+                Features:
+            </b>
+
+            <br>
+
+            ✔ Add / Update / Delete employee data
+
+            <br>
+
+            ✔ Attendance & salary structure
+
+            <br>
+
+            ✔ MySQL database design
+
+            <br>
+            <br>
+
+            <b>
+                Tech Stack:
+            </b>
+
+            <br>
+
+            MySQL, SQL
+
+            <br>
+            <br>
+
+            <a
+                href="https://github.com/santhoshakkisetti/Employee-Management-System/blob/main/Employee%20Management%20System"
+                target="_blank"
+                class="project-link">
+
+                View Project
+
             </a>
 
         </div>
 
-    </div>
 
-
-
-    <!-- PROFILE IMAGE -->
-
-    <div class="hero-right">
-
-        <div class="photo-box">
-
-            <img
-                src="img.jpeg"
-                alt="Santhosh Akkisetti Profile Photo">
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =======================
-     ABOUT
-======================= -->
-
-<section id="about">
-
-    <h2>About Me</h2>
-
-    <p class="about-text">
-
-        I am a B.Tech Electrical and Electronics Engineering student
-        transitioning into the IT field. I have strong analytical thinking
-        and problem-solving skills. I am passionate about building scalable
-        applications and user-friendly digital experiences using modern
-        technologies like Python, AWS, ServiceNow (CSA, CAD), and UI/UX design.
-
-    </p>
-
-
-    <div class="grid-3">
-
+        <!-- CLINIC CONNECT -->
 
         <div class="card">
 
-            <div class="icon-title">
-                🎓 Education
-            </div>
+            <b>
+                🎨 ClinicConnect (UI/UX Design)
+            </b>
 
-            B.Tech EEE
+            <br>
             <br>
 
-            CGPA: 7.8/10
+            A modern healthcare appointment booking system designed
+            in Figma focusing on user experience.
+
+            <br>
             <br>
 
-            Gayatri Vidya Parishad College of Engineering
+            <b>
+                Features:
+            </b>
+
+            <br>
+
+            ✔ Appointment booking UI
+
+            <br>
+
+            ✔ Clean user flow design
+
+            <br>
+
+            ✔ Mobile-friendly interface
+
+            <br>
+            <br>
+
+            <b>
+                Tool Used:
+            </b>
+
+            Figma
+
+            <br>
+            <br>
+
+            <a
+                href="https://www.figma.com/proto/0NLdLJKXBCOJsQVdLi9Fum/ClinicConnect?node-id=1-4&viewport=132%2C326%2C0.06&t=xkBs7A9qkzEE4gfU-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=134%3A76&show-proto-sidebar=1&page-id=0%3A1"
+                target="_blank"
+                class="project-link">
+
+                View Project
+
+            </a>
 
         </div>
 
+    </section>
 
 
-        <div class="card">
+    <!-- =========================
+         CONTACT
+    ========================= -->
 
-            <div class="icon-title">
-                🏠 Location
+    <section id="contact">
+
+        <h2>
+            Let's Connect
+        </h2>
+
+        <p style="color:#cbd5e1;">
+
+            I'm always excited to collaborate or discuss opportunities.
+
+        </p>
+
+
+        <form id="contactForm">
+
+            <div class="name-row">
+
+                <input
+                    type="text"
+                    id="firstName"
+                    placeholder="First Name"
+                    required>
+
+                <input
+                    type="text"
+                    id="lastName"
+                    placeholder="Last Name"
+                    required>
+
             </div>
 
-            Andhra Pradesh, India
-            <br>
-
-            Open to Remote Work
-
-        </div>
-
-
-
-        <div class="card">
-
-            <div class="icon-title">
-                💡 Interests
-            </div>
-
-            UI/UX Design
-            <br>
-
-            Cloud Computing
-            <br>
-
-            Web Development
-            <br>
-
-            Problem Solving
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =======================
-     SKILLS
-======================= -->
-
-<section id="skills">
-
-    <h2>Skills</h2>
-
-
-    <div class="skills-group">
-
-        <b>Programming:</b>
-        <br>
-
-        <span>Python</span>
-
-    </div>
-
-
-
-    <div class="skills-group">
-
-        <b>Frontend:</b>
-        <br>
-
-        <span>HTML</span>
-
-        <span>CSS</span>
-
-        <span>JavaScript</span>
-
-    </div>
-
-
-
-    <div class="skills-group">
-
-        <b>Database:</b>
-        <br>
-
-        <span>MySQL</span>
-
-    </div>
-
-
-
-    <div class="skills-group">
-
-        <b>Cloud:</b>
-        <br>
-
-        <span>AWS EC2</span>
-
-        <span>AWS S3</span>
-
-        <span>AWS IAM</span>
-
-        <span>AWS Lambda</span>
-
-    </div>
-
-
-
-    <div class="skills-group">
-
-        <b>Design:</b>
-        <br>
-
-        <span>UI/UX (Figma)</span>
-
-    </div>
-
-
-
-    <div class="skills-group">
-
-        <b>ServiceNow:</b>
-        <br>
-
-        <span>CSA</span>
-
-        <span>CAD</span>
-
-    </div>
-
-</section>
-
-
-
-<!-- =======================
-     CERTIFICATIONS
-======================= -->
-
-<section id="certifications">
-
-    <h2>Certifications</h2>
-
-
-    <div class="certifications-grid">
-
-
-        <div class="certification-card">
-
-            <div class="certification-icon">
-                🏆
-            </div>
-
-            <h3>
-                ServiceNow Certified System Administrator
-            </h3>
-
-            <p>
-
-                Certified in ServiceNow platform administration,
-                configuration, and core platform capabilities.
-
-            </p>
-
-            <span class="certification-badge">
-
-                ServiceNow CSA
-
-            </span>
-
-        </div>
-
-
-
-        <div class="certification-card">
-
-            <div class="certification-icon">
-                🏆
-            </div>
-
-            <h3>
-                ServiceNow Certified Application Developer
-            </h3>
-
-            <p>
-
-                Certified in ServiceNow application development,
-                application configuration, and platform development.
-
-            </p>
-
-            <span class="certification-badge">
-
-                ServiceNow CAD
-
-            </span>
-
-        </div>
-
-
-
-        <div class="certification-card">
-
-            <div class="certification-icon">
-                ☁️
-            </div>
-
-            <h3>
-                AWS Certified Cloud Practitioner
-            </h3>
-
-            <p>
-
-                Certification covering AWS Cloud concepts,
-                core services, security, architecture, and pricing.
-
-            </p>
-
-            <span class="certification-badge">
-
-                AWS Cloud Practitioner
-
-            </span>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =======================
-     EXPERIENCE
-======================= -->
-
-<section id="experience">
-
-    <h2>Experience</h2>
-
-
-    <div class="exp">
-
-        <b>
-            Cloud & ServiceNow Intern - SmartBridge
-        </b>
-
-        <br>
-        <br>
-
-        • AWS EC2, S3, RDS, Lambda hands-on experience
-
-        <br>
-
-        • ServiceNow CSA & CAD platform development
-
-        <br>
-
-        • Python-based automation tasks
-
-        <br>
-
-        • UI/UX support and cloud deployment practice
-
-    </div>
-
-</section>
-
-
-
-<!-- =======================
-     PROJECTS
-======================= -->
-
-<section id="projects">
-
-    <h2>Projects</h2>
-
-
-    <!-- SMART CAMPUS -->
-
-    <div class="card">
-
-        <b>
-            🎓 Smart Campus Management System (ServiceNow)
-        </b>
-
-        <br>
-        <br>
-
-        A ServiceNow-based campus management platform that digitizes
-        academic and administrative workflows for students, faculty,
-        and administrators.
-
-        <br>
-        <br>
-
-        <b>
-            Features:
-        </b>
-
-        <br>
-
-        ✔ Student and faculty request management
-
-        <br>
-
-        ✔ Course registration and enrollment workflows
-
-        <br>
-
-        ✔ Faculty leave application management
-
-        <br>
-
-        ✔ Facility complaint management
-
-        <br>
-
-        ✔ Automated multi-stage approvals using Flow Designer
-
-        <br>
-
-        ✔ Service Portal and Catalog
-
-        <br>
-
-        ✔ Role-based access control using ACLs
-
-        <br>
-
-        ✔ Reports and administrative dashboards
-
-        <br>
-        <br>
-
-        <b>
-            Tech Stack:
-        </b>
-
-        ServiceNow, Flow Designer, JavaScript, Glide Script, Service Portal
-
-        <br>
-        <br>
-
-        <a
-            href="https://github.com/santhoshakkisetti/Smart-Campus-Management-System"
-            target="_blank"
-            class="project-link">
-
-            View Project
-
-        </a>
-
-    </div>
-
-
-
-    <!-- EMPLOYEE MANAGEMENT -->
-
-    <div class="card">
-
-        <b>
-            📊 Employee Management System (MySQL)
-        </b>
-
-        <br>
-        <br>
-
-        A database management system to handle employee records
-        with structured SQL queries.
-
-        <br>
-        <br>
-
-        <b>
-            Features:
-        </b>
-
-        <br>
-
-        ✔ Add / Update / Delete employee data
-
-        <br>
-
-        ✔ Attendance & salary structure
-
-        <br>
-
-        ✔ MySQL database design
-
-        <br>
-        <br>
-
-        <b>
-            Tech Stack:
-        </b>
-
-        MySQL, SQL
-
-        <br>
-        <br>
-
-        <a
-            href="https://github.com/santhoshakkisetti/Employee-Management-System/blob/main/Employee%20Management%20System"
-            target="_blank"
-            class="project-link">
-
-            View Project
-
-        </a>
-
-    </div>
-
-
-
-    <!-- CLINIC CONNECT -->
-
-    <div class="card">
-
-        <b>
-            🎨 ClinicConnect (UI/UX Design)
-        </b>
-
-        <br>
-        <br>
-
-        A modern healthcare appointment booking system designed
-        in Figma focusing on user experience.
-
-        <br>
-        <br>
-
-        <b>
-            Features:
-        </b>
-
-        <br>
-
-        ✔ Appointment booking UI
-
-        <br>
-
-        ✔ Clean user flow design
-
-        <br>
-
-        ✔ Mobile-friendly interface
-
-        <br>
-        <br>
-
-        <b>
-            Tool Used:
-        </b>
-
-        Figma
-
-        <br>
-        <br>
-
-        <a
-            href="https://www.figma.com/proto/0NLdLJKXBCOJsQVdLi9Fum/ClinicConnect?node-id=1-4&viewport=132%2C326%2C0.06&t=xkBs7A9qkzEE4gfU-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=134%3A76&show-proto-sidebar=1&page-id=0%3A1"
-            target="_blank"
-            class="project-link">
-
-            View Project
-
-        </a>
-
-    </div>
-
-</section>
-
-
-
-<!-- =======================
-     CONTACT
-======================= -->
-
-<section id="contact">
-
-    <h2>
-        Let's Connect
-    </h2>
-
-
-    <p style="color:#cbd5e1;">
-
-        I'm always excited to collaborate or discuss opportunities.
-
-    </p>
-
-
-    <form id="contactForm">
-
-
-        <div class="name-row">
 
             <input
-                type="text"
-                id="firstName"
-                placeholder="First Name"
+                type="email"
+                id="email"
+                placeholder="Email"
                 required>
 
 
             <input
                 type="text"
-                id="lastName"
-                placeholder="Last Name"
+                id="subject"
+                placeholder="Subject"
                 required>
+
+
+            <textarea
+                id="message"
+                placeholder="Message"
+                rows="5"
+                required></textarea>
+
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+
+        <!-- SOCIAL LINKS -->
+
+        <div class="social-links">
+
+
+            <a
+                href="https://github.com/santhoshakkisetti"
+                target="_blank">
+
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                    alt="GitHub">
+
+            </a>
+
+
+            <a
+                href="https://linkedin.com/in/akkisetti-santhosh"
+                target="_blank">
+
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                    alt="LinkedIn">
+
+            </a>
+
+
+            <a
+                href="tel:9912997225">
+
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/597/597177.png"
+                    alt="Phone">
+
+            </a>
+
+
+            <a
+                href="mailto:santhoshakkisetti26@gmail.com">
+
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+                    alt="Email">
+
+            </a>
 
         </div>
 
-
-        <input
-            type="email"
-            id="email"
-            placeholder="Email"
-            required>
+    </section>
 
 
-        <input
-            type="text"
-            id="subject"
-            placeholder="Subject"
-            required>
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        © 2026 SANTHOSH AKKISETTI. All rights reserved.
+
+    </footer>
 
 
-        <textarea
-            id="message"
-            placeholder="Message"
-            rows="5"
-            required></textarea>
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
+    <script>
 
-        <button type="submit">
+        document
+            .getElementById("contactForm")
+            .addEventListener("submit", function (e) {
 
-            Send Message
+                e.preventDefault();
 
-        </button>
+                let firstName =
+                    document.getElementById("firstName").value;
 
-    </form>
+                let lastName =
+                    document.getElementById("lastName").value;
 
+                let email =
+                    document.getElementById("email").value;
 
-    <!-- SOCIAL LINKS -->
+                let subject =
+                    document.getElementById("subject").value;
 
-    <div class="social-links">
+                let message =
+                    document.getElementById("message").value;
 
-
-        <!-- GITHUB -->
-
-        <a
-            href="https://github.com/santhoshakkisetti"
-            target="_blank">
-
-            <img
-                src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
-                alt="GitHub">
-
-        </a>
-
-
-
-        <!-- LINKEDIN -->
-
-        <a
-            href="https://linkedin.com/in/akkisetti-santhosh"
-            target="_blank">
-
-            <img
-                src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-                alt="LinkedIn">
-
-        </a>
-
-
-
-        <!-- PHONE -->
-
-        <a
-            href="tel:9912997225">
-
-            <img
-                src="https://cdn-icons-png.flaticon.com/512/597/597177.png"
-                alt="Phone">
-
-        </a>
-
-
-
-        <!-- EMAIL -->
-
-        <a
-            href="mailto:santhoshakkisetti26@gmail.com">
-
-            <img
-                src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
-                alt="Email">
-
-        </a>
-
-    </div>
-
-</section>
-
-
-
-<!-- =======================
-     FOOTER
-======================= -->
-
-<footer>
-
-    © 2026 SANTHOSH AKKISETTI. All rights reserved.
-
-</footer>
-
-
-
-<!-- =======================
-     JAVASCRIPT
-======================= -->
-
-<script>
-
-document
-.getElementById("contactForm")
-.addEventListener("submit", function(e){
-
-    e.preventDefault();
-
-
-    let firstName =
-        document.getElementById("firstName").value;
-
-
-    let lastName =
-        document.getElementById("lastName").value;
-
-
-    let email =
-        document.getElementById("email").value;
-
-
-    let subject =
-        document.getElementById("subject").value;
-
-
-    let message =
-        document.getElementById("message").value;
-
-
-    let mailBody =
-
-`Name: ${firstName} ${lastName}
+                let mailBody =
+                    `Name: ${firstName} ${lastName}
 
 Email: ${email}
 
 Message:
 ${message}`;
 
+                let mailtoLink =
+                    `mailto:santhoshakkisetti26@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(mailBody)}`;
 
-    let mailtoLink =
+                window.location.href = mailtoLink;
 
-        `mailto:santhoshakkisetti26@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(mailBody)}`;
+            });
 
 
-    window.location.href = mailtoLink;
+        /* =========================
+           IMAGE ERROR CHECK
+        ========================= */
 
-});
+        const profileImage =
+            document.querySelector(".photo-box img");
 
-</script>
+        profileImage.addEventListener("error", function () {
+
+            console.log(
+                "ERROR: img.jpeg was not found."
+            );
+
+        });
+
+    </script>
 
 
 </body>
