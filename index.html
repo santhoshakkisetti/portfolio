@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,20 +10,21 @@
     <style>
 
         /* =========================
-           GLOBAL
+           RESET
         ========================= */
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
             scroll-behavior: smooth;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         body {
             background: #0f172a;
             color: white;
+            overflow-x: hidden;
         }
 
 
@@ -36,32 +36,36 @@
             position: fixed;
             top: 0;
             left: 0;
+
             width: 100%;
 
-            background: rgba(15, 23, 42, 0.95);
+            height: 90px;
+
+            padding: 0 32px;
 
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            padding: 18px 32px;
+            background: rgba(15, 23, 42, 0.96);
+
+            backdrop-filter: blur(12px);
+
+            box-shadow: 0 3px 20px rgba(0, 0, 0, 0.35);
 
             z-index: 1000;
-
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.45);
-
-            backdrop-filter: blur(10px);
         }
 
         nav h2 {
             color: #38bdf8;
-            font-size: 26px;
+            font-size: 27px;
 
-            opacity: 0;
-            animation: navbarName 1s ease forwards;
+            white-space: nowrap;
+
+            animation: navName 1s ease forwards;
         }
 
-        @keyframes navbarName {
+        @keyframes navName {
 
             0% {
                 opacity: 0;
@@ -81,9 +85,13 @@
 
         nav a {
             color: white;
-            margin-left: 20px;
+
             text-decoration: none;
+
+            margin-left: 22px;
+
             font-size: 16px;
+
             transition: 0.3s;
         }
 
@@ -93,17 +101,22 @@
 
 
         /* =========================
-           HOME / HERO
+           HOME
         ========================= */
 
         .hero {
             min-height: 100vh;
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            width: 100%;
 
-            padding: 120px 80px 60px;
+            padding:
+                120px 80px 60px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
 
             gap: 70px;
 
@@ -112,31 +125,40 @@
 
 
         /* =========================
-           LEFT SIDE
+           HOME LEFT
         ========================= */
 
         .hero-left {
             flex: 1;
-            max-width: 600px;
+
+            max-width: 620px;
+
+            z-index: 2;
         }
 
         .hero small {
+            display: block;
+
             color: #cbd5e1;
+
             font-size: 19px;
+
+            margin-bottom: 10px;
 
             opacity: 0;
 
-            animation: helloAnimation 1s ease forwards;
+            animation:
+                fadeDown 1s ease 0.2s forwards;
         }
 
-        @keyframes helloAnimation {
+        @keyframes fadeDown {
 
-            0% {
+            from {
                 opacity: 0;
                 transform: translateY(-25px);
             }
 
-            100% {
+            to {
                 opacity: 1;
                 transform: translateY(0);
             }
@@ -144,17 +166,17 @@
 
 
         /* =========================
-           NAME
+           ANIMATED NAME
         ========================= */
 
         .hero h1 {
-            margin-top: 12px;
-
             font-size: 58px;
 
             line-height: 1.15;
 
             color: #38bdf8;
+
+            margin-bottom: 20px;
 
             min-height: 135px;
         }
@@ -162,9 +184,9 @@
         .animated-name {
             display: inline-block;
 
-            white-space: nowrap;
-
             overflow: hidden;
+
+            white-space: nowrap;
 
             width: 0;
 
@@ -172,8 +194,8 @@
 
             animation:
                 typing 2.5s steps(18, end) 0.5s forwards,
-                blinkCursor 0.7s step-end infinite,
-                nameGlow 2s ease-in-out 3s infinite alternate;
+                cursorBlink 0.7s step-end infinite,
+                glowName 2s ease-in-out 3s infinite alternate;
         }
 
         @keyframes typing {
@@ -187,7 +209,7 @@
             }
         }
 
-        @keyframes blinkCursor {
+        @keyframes cursorBlink {
 
             0%,
             100% {
@@ -199,34 +221,33 @@
             }
         }
 
-        @keyframes nameGlow {
+        @keyframes glowName {
 
             from {
-                text-shadow:
-                    0 0 0 rgba(56, 189, 248, 0);
+                text-shadow: 0 0 5px rgba(56, 189, 248, 0.2);
             }
 
             to {
                 text-shadow:
-                    0 0 10px rgba(56, 189, 248, 0.6),
-                    0 0 25px rgba(56, 189, 248, 0.4),
-                    0 0 45px rgba(56, 189, 248, 0.2);
+                    0 0 10px rgba(56, 189, 248, 0.7),
+                    0 0 25px rgba(56, 189, 248, 0.5),
+                    0 0 45px rgba(56, 189, 248, 0.3);
             }
         }
 
 
         /* =========================
-           HERO DESCRIPTION
+           DESCRIPTION
         ========================= */
 
         .hero p {
-            margin-top: 15px;
-
             color: #cbd5e1;
+
+            font-size: 17px;
 
             line-height: 1.8;
 
-            font-size: 16px;
+            max-width: 600px;
 
             opacity: 0;
 
@@ -253,11 +274,11 @@
         ========================= */
 
         .btn {
-            margin-top: 25px;
-
             display: flex;
 
             gap: 15px;
+
+            margin-top: 28px;
 
             opacity: 0;
 
@@ -266,13 +287,13 @@
         }
 
         .btn a {
-            padding: 13px 24px;
+            text-decoration: none;
 
             background: #38bdf8;
 
             color: #020617;
 
-            text-decoration: none;
+            padding: 13px 24px;
 
             border-radius: 8px;
 
@@ -285,16 +306,18 @@
             transform: translateY(-4px);
 
             box-shadow:
-                0 8px 25px rgba(56, 189, 248, 0.4);
+                0 10px 25px rgba(56, 189, 248, 0.35);
         }
 
 
         /* =========================
-           RIGHT SIDE IMAGE
+           HOME RIGHT
         ========================= */
 
         .hero-right {
             flex: 1;
+
+            min-width: 0;
 
             display: flex;
 
@@ -305,7 +328,7 @@
             opacity: 0;
 
             animation:
-                imageEntrance 1.3s ease 0.7s forwards;
+                imageEntrance 1.2s ease 0.5s forwards;
         }
 
         @keyframes imageEntrance {
@@ -315,9 +338,9 @@
                 transform: translateX(100px) scale(0.7);
             }
 
-            60% {
+            70% {
                 opacity: 1;
-                transform: translateX(-10px) scale(1.05);
+                transform: translateX(-8px) scale(1.04);
             }
 
             100% {
@@ -328,32 +351,40 @@
 
 
         /* =========================
-           IMAGE CIRCLE
+           PHOTO FRAME
         ========================= */
 
         .photo-box {
-            width: 350px;
-            height: 350px;
+
+            width: 360px;
+            height: 360px;
+
+            flex-shrink: 0;
 
             border-radius: 50%;
 
             border: 4px solid #38bdf8;
 
+            background: #0f172a;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
             overflow: hidden;
 
-            background: #1e293b;
-
-            position: relative;
-
             box-shadow:
-                0 0 20px rgba(56, 189, 248, 0.5),
-                0 0 50px rgba(56, 189, 248, 0.25),
-                0 0 90px rgba(56, 189, 248, 0.1);
+                0 0 20px rgba(56, 189, 248, 0.55),
+                0 0 45px rgba(56, 189, 248, 0.3),
+                0 0 80px rgba(56, 189, 248, 0.15);
 
-            animation: floatingImage 4s ease-in-out infinite;
+            animation:
+                floatingPhoto 4s ease-in-out infinite;
         }
 
-        @keyframes floatingImage {
+        @keyframes floatingPhoto {
 
             0%,
             100% {
@@ -367,30 +398,40 @@
 
 
         /* =========================
-           IMAGE
+           PROFILE IMAGE
+           
+           IMPORTANT:
+           contain = DO NOT CROP IMAGE
         ========================= */
 
         .photo-box img {
+
             width: 100%;
+
             height: 100%;
 
             display: block;
 
-            object-fit: cover;
+            object-fit: contain;
 
             object-position: center;
 
-            transition: 0.5s ease;
+            background: #0f172a;
+
+            transition:
+                transform 0.5s ease;
         }
 
         .photo-box:hover img {
-            transform: scale(1.08);
+            transform: scale(1.04);
         }
 
         .photo-box:hover {
+
             box-shadow:
                 0 0 30px rgba(56, 189, 248, 0.8),
-                0 0 70px rgba(56, 189, 248, 0.4);
+                0 0 65px rgba(56, 189, 248, 0.4),
+                0 0 100px rgba(56, 189, 248, 0.2);
         }
 
 
@@ -399,19 +440,22 @@
         ========================= */
 
         section {
-            padding: 90px 20px;
 
             max-width: 1000px;
 
             margin: auto;
+
+            padding:
+                100px 20px;
         }
 
-        h2 {
+        section h2 {
+
             color: #38bdf8;
 
-            margin-bottom: 20px;
-
             font-size: 32px;
+
+            margin-bottom: 25px;
         }
 
 
@@ -420,17 +464,22 @@
         ========================= */
 
         .about-text {
+
             color: #cbd5e1;
 
             line-height: 1.8;
 
             margin-bottom: 35px;
+
+            font-size: 16px;
         }
 
         .grid-3 {
+
             display: grid;
 
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns:
+                repeat(3, 1fr);
 
             gap: 20px;
         }
@@ -441,39 +490,38 @@
         ========================= */
 
         .card {
+
             background: #1e293b;
 
-            padding: 20px;
+            padding: 22px;
 
             border-radius: 12px;
 
-            transition: 0.3s;
+            line-height: 1.7;
 
             border: 1px solid transparent;
+
+            transition: 0.3s;
         }
 
         .card:hover {
+
             transform: translateY(-5px);
 
-            box-shadow:
-                0 0 15px rgba(56, 189, 248, 0.3);
-
             border-color:
-                rgba(56, 189, 248, 0.3);
+                rgba(56, 189, 248, 0.5);
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.25);
         }
 
         .icon-title {
+
             font-weight: bold;
 
-            margin-bottom: 10px;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 8px;
-
             font-size: 18px;
+
+            margin-bottom: 10px;
         }
 
 
@@ -482,17 +530,23 @@
         ========================= */
 
         .skills-group {
-            margin-bottom: 20px;
+
+            margin-bottom: 22px;
+
+            color: #cbd5e1;
         }
 
         .skills-group span {
+
             display: inline-block;
 
             background: #334155;
 
-            padding: 7px 14px;
+            padding:
+                8px 15px;
 
-            margin: 6px;
+            margin:
+                6px 5px 0 0;
 
             border-radius: 20px;
 
@@ -500,9 +554,10 @@
         }
 
         .skills-group span:hover {
+
             background: #38bdf8;
 
-            color: black;
+            color: #020617;
 
             transform: translateY(-2px);
         }
@@ -513,51 +568,56 @@
         ========================= */
 
         .certifications-grid {
+
             display: grid;
 
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns:
+                repeat(3, 1fr);
 
             gap: 20px;
         }
 
         .certification-card {
+
             background: #1e293b;
 
             padding: 25px;
 
             border-radius: 12px;
 
-            transition: 0.3s;
-
             border: 1px solid transparent;
+
+            transition: 0.3s;
         }
 
         .certification-card:hover {
+
             transform: translateY(-5px);
 
-            box-shadow:
-                0 0 15px rgba(56, 189, 248, 0.3);
-
             border-color: #38bdf8;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.25);
         }
 
         .certification-icon {
+
             font-size: 35px;
 
             margin-bottom: 15px;
         }
 
         .certification-card h3 {
-            color: white;
-
-            margin-bottom: 10px;
 
             font-size: 19px;
 
             line-height: 1.4;
+
+            margin-bottom: 12px;
         }
 
         .certification-card p {
+
             color: #cbd5e1;
 
             line-height: 1.6;
@@ -566,13 +626,15 @@
         }
 
         .certification-badge {
+
             display: inline-block;
 
             background: #334155;
 
             color: #38bdf8;
 
-            padding: 6px 12px;
+            padding:
+                6px 12px;
 
             border-radius: 20px;
 
@@ -587,15 +649,17 @@
         ========================= */
 
         .exp {
+
             background: #1e293b;
 
-            padding: 20px;
+            padding: 25px;
 
             border-radius: 12px;
 
             line-height: 1.8;
 
-            border-left: 4px solid #38bdf8;
+            border-left:
+                4px solid #38bdf8;
         }
 
 
@@ -604,21 +668,22 @@
         ========================= */
 
         #projects .card {
-            margin-bottom: 20px;
 
-            line-height: 1.7;
+            margin-bottom: 22px;
         }
 
         .project-link {
+
             display: inline-block;
 
-            margin-top: 10px;
+            margin-top: 15px;
+
+            padding:
+                10px 16px;
 
             background: #38bdf8;
 
-            color: black;
-
-            padding: 10px 15px;
+            color: #020617;
 
             text-decoration: none;
 
@@ -630,10 +695,11 @@
         }
 
         .project-link:hover {
-            transform: translateY(-2px);
+
+            transform: translateY(-3px);
 
             box-shadow:
-                0 5px 15px rgba(56, 189, 248, 0.3);
+                0 8px 20px rgba(56, 189, 248, 0.3);
         }
 
 
@@ -641,122 +707,150 @@
            CONTACT
         ========================= */
 
+        #contact > p {
+
+            color: #cbd5e1;
+
+            margin-bottom: 20px;
+        }
+
         input,
         textarea {
+
             width: 100%;
 
-            padding: 12px;
+            padding: 13px;
 
-            margin: 10px 0;
+            margin:
+                8px 0;
 
-            border: none;
+            border: 1px solid transparent;
 
-            border-radius: 6px;
+            border-radius: 7px;
+
+            outline: none;
 
             background: #1e293b;
 
             color: white;
-
-            outline: none;
-
-            border: 1px solid transparent;
 
             transition: 0.3s;
         }
 
         input:focus,
         textarea:focus {
+
             border-color: #38bdf8;
 
             box-shadow:
-                0 0 8px rgba(56, 189, 248, 0.15);
+                0 0 10px rgba(56, 189, 248, 0.15);
+        }
+
+        textarea {
+
+            resize: vertical;
         }
 
         .name-row {
+
             display: flex;
 
             gap: 10px;
         }
 
         .name-row input {
-            width: 100%;
+
+            flex: 1;
         }
 
         button {
-            padding: 12px 22px;
+
+            margin-top: 8px;
+
+            padding:
+                12px 22px;
 
             background: #38bdf8;
 
+            color: #020617;
+
             border: none;
 
-            border-radius: 6px;
-
-            cursor: pointer;
+            border-radius: 7px;
 
             font-weight: bold;
+
+            cursor: pointer;
 
             transition: 0.3s;
         }
 
         button:hover {
+
             transform: translateY(-2px);
 
             box-shadow:
-                0 5px 15px rgba(56, 189, 248, 0.3);
+                0 8px 20px rgba(56, 189, 248, 0.3);
         }
 
 
         /* =========================
-           SOCIAL LINKS
+           SOCIAL
         ========================= */
 
         .social-links {
+
             display: flex;
 
             justify-content: center;
 
+            align-items: center;
+
             gap: 25px;
 
             margin-top: 40px;
-
-            margin-bottom: 20px;
         }
 
         .social-links a {
+
             width: 50px;
 
             height: 50px;
 
             display: flex;
 
-            align-items: center;
-
             justify-content: center;
+
+            align-items: center;
 
             background: #1e293b;
 
             border-radius: 50%;
 
-            transition: 0.3s;
-
             border: 1px solid transparent;
-        }
 
-        .social-links img {
-            width: 28px;
-
-            height: 28px;
-
-            object-fit: contain;
+            transition: 0.3s;
         }
 
         .social-links a:hover {
-            transform: translateY(-5px) scale(1.08);
+
+            transform:
+                translateY(-5px)
+                scale(1.05);
 
             border-color: #38bdf8;
 
             box-shadow:
-                0 0 15px rgba(56, 189, 248, 0.3);
+                0 0 15px rgba(56, 189, 248, 0.35);
+        }
+
+        .social-links img {
+
+            width: 27px;
+
+            height: 27px;
+
+            object-fit: contain;
         }
 
 
@@ -765,13 +859,12 @@
         ========================= */
 
         footer {
+
             text-align: center;
 
-            padding: 20px;
+            padding: 22px;
 
             background: #111827;
-
-            margin-top: 20px;
 
             color: #cbd5e1;
         }
@@ -781,22 +874,27 @@
            TABLET
         ========================= */
 
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
 
             .hero {
-                padding-left: 40px;
-                padding-right: 40px;
 
-                gap: 30px;
+                padding-left: 45px;
+
+                padding-right: 45px;
+
+                gap: 35px;
             }
 
             .hero h1 {
+
                 font-size: 48px;
             }
 
             .photo-box {
-                width: 300px;
-                height: 300px;
+
+                width: 320px;
+
+                height: 320px;
             }
         }
 
@@ -808,66 +906,86 @@
         @media (max-width: 768px) {
 
             nav {
-                padding: 15px 20px;
+
+                height: 75px;
+
+                padding:
+                    0 20px;
             }
 
             nav h2 {
-                font-size: 20px;
+
+                font-size: 21px;
             }
 
             nav div {
+
                 display: none;
             }
 
             .hero {
 
+                min-height: auto;
+
+                padding:
+                    120px 20px 70px;
+
                 flex-direction: column;
 
                 text-align: center;
 
-                padding:
-                    130px 20px 60px;
-
-                min-height: auto;
+                gap: 45px;
             }
 
             .hero-left {
+
                 max-width: 100%;
             }
 
             .hero h1 {
+
                 font-size: 42px;
 
                 min-height: 100px;
             }
 
             .hero p {
+
                 font-size: 15px;
             }
 
             .btn {
+
                 justify-content: center;
             }
 
             .hero-right {
-                margin-top: 30px;
+
+                width: 100%;
             }
 
             .photo-box {
-                width: 270px;
-                height: 270px;
+
+                width: 280px;
+
+                height: 280px;
             }
 
             .grid-3 {
+
                 grid-template-columns: 1fr;
             }
 
             .certifications-grid {
+
                 grid-template-columns: 1fr;
             }
 
             .name-row {
+
                 flex-direction: column;
+
+                gap: 0;
             }
         }
 
@@ -878,34 +996,39 @@
 
         @media (max-width: 450px) {
 
+            nav h2 {
+
+                font-size: 18px;
+            }
+
             .hero h1 {
+
                 font-size: 34px;
 
                 min-height: 80px;
             }
 
             .photo-box {
-                width: 230px;
-                height: 230px;
-            }
 
-            h2 {
-                font-size: 28px;
+                width: 240px;
+
+                height: 240px;
             }
 
             .btn {
+
                 flex-direction: column;
 
                 align-items: center;
             }
 
             .btn a {
+
                 width: 180px;
             }
         }
 
     </style>
-
 </head>
 
 
@@ -930,21 +1053,13 @@
 
             <a href="#skills">Skills</a>
 
-            <a href="#certifications">
-                Certifications
-            </a>
+            <a href="#certifications">Certifications</a>
 
-            <a href="#experience">
-                Experience
-            </a>
+            <a href="#experience">Experience</a>
 
-            <a href="#projects">
-                Projects
-            </a>
+            <a href="#projects">Projects</a>
 
-            <a href="#contact">
-                Contact
-            </a>
+            <a href="#contact">Contact</a>
 
         </div>
 
@@ -952,24 +1067,19 @@
 
 
     <!-- =========================
-         HOME PAGE
+         HOME
     ========================= -->
 
     <section class="hero" id="home">
 
 
-        <!-- LEFT SIDE -->
+        <!-- LEFT -->
 
         <div class="hero-left">
 
             <small>
                 Hello, I am
             </small>
-
-
-            <!--
-                ANIMATED NAME
-            -->
 
             <h1>
 
@@ -979,15 +1089,14 @@
 
             </h1>
 
-
             <p>
 
-                B.Tech EEE student transitioning into IT with strong analytical
-                and problem-solving skills. Focused on building scalable,
-                user-friendly digital solutions using Python, AWS Cloud,Servicenow(CSA & CAD) and UI/UX.
+                B.Tech EEE student transitioning into IT with strong
+                analytical and problem-solving skills. Focused on building
+                scalable, user-friendly digital solutions using Python,
+                Cloud, and UI/UX.
 
             </p>
-
 
             <div class="btn">
 
@@ -1004,23 +1113,15 @@
         </div>
 
 
-        <!-- =========================
-             PROFILE IMAGE
-        ========================= -->
+        <!-- RIGHT PROFILE PHOTO -->
 
         <div class="hero-right">
 
             <div class="photo-box">
 
-                <!--
-                    IMPORTANT:
-                    img.jpeg MUST be in the same folder
-                    as this index.html file.
-                -->
-
                 <img
                     src="./img.jpeg?v=20260813"
-                    alt="Santhosh Akkisetti Profile Photo">
+                    alt="Santhosh Akkisetti">
 
             </div>
 
@@ -1049,9 +1150,7 @@
 
         </p>
 
-
         <div class="grid-3">
-
 
             <div class="card">
 
@@ -1075,7 +1174,7 @@
             <div class="card">
 
                 <div class="icon-title">
-                    🏠 Location
+                    📍 Location
                 </div>
 
                 Andhra Pradesh, India
@@ -1123,7 +1222,6 @@
         <h2>
             Skills
         </h2>
-
 
         <div class="skills-group">
 
@@ -1185,7 +1283,9 @@
 
             <br>
 
-            <span>UI/UX (Figma)</span>
+            <span>UI/UX</span>
+
+            <span>Figma</span>
 
         </div>
 
@@ -1215,9 +1315,7 @@
             Certifications
         </h2>
 
-
         <div class="certifications-grid">
-
 
             <div class="certification-card">
 
@@ -1299,7 +1397,6 @@
             Experience
         </h2>
 
-
         <div class="exp">
 
             <b>
@@ -1339,8 +1436,6 @@
         </h2>
 
 
-        <!-- SMART CAMPUS -->
-
         <div class="card">
 
             <b>
@@ -1379,19 +1474,19 @@
 
             <br>
 
-            ✔ Automated multi-stage approvals using Flow Designer
+            ✔ Automated workflows using Flow Designer
 
             <br>
 
-            ✔ Service Portal and Catalog
+            ✔ Service Portal and Service Catalog
 
             <br>
 
-            ✔ Role-based access control using ACLs
+            ✔ Role-based access control
 
             <br>
 
-            ✔ Reports and administrative dashboards
+            ✔ Reports and dashboards
 
             <br>
             <br>
@@ -1404,7 +1499,6 @@
 
             ServiceNow, Flow Designer, JavaScript, Glide Script, Service Portal
 
-            <br>
             <br>
 
             <a
@@ -1419,34 +1513,26 @@
         </div>
 
 
-        <!-- EMPLOYEE MANAGEMENT -->
-
         <div class="card">
 
             <b>
-                📊 Employee Management System (MySQL)
+                📊 Employee Management System - MySQL
             </b>
 
             <br>
             <br>
 
-            A database management system to handle employee records
-            with structured SQL queries.
+            A database management system for managing employee records
+            using structured SQL queries.
 
             <br>
             <br>
 
-            <b>
-                Features:
-            </b>
+            ✔ Add / Update / Delete employee records
 
             <br>
 
-            ✔ Add / Update / Delete employee data
-
-            <br>
-
-            ✔ Attendance & salary structure
+            ✔ Employee data management
 
             <br>
 
@@ -1459,15 +1545,12 @@
                 Tech Stack:
             </b>
 
-            <br>
-
             MySQL, SQL
 
             <br>
-            <br>
 
             <a
-                href="https://github.com/santhoshakkisetti/Employee-Management-System/blob/main/Employee%20Management%20System"
+                href="https://github.com/santhoshakkisetti/Employee-Management-System"
                 target="_blank"
                 class="project-link">
 
@@ -1478,34 +1561,26 @@
         </div>
 
 
-        <!-- CLINIC CONNECT -->
-
         <div class="card">
 
             <b>
-                🎨 ClinicConnect (UI/UX Design)
+                🎨 ClinicConnect - UI/UX Design
             </b>
 
             <br>
             <br>
 
-            A modern healthcare appointment booking system designed
-            in Figma focusing on user experience.
+            A healthcare appointment booking interface designed in Figma
+            with focus on usability and clean user flows.
 
             <br>
-            <br>
-
-            <b>
-                Features:
-            </b>
-
             <br>
 
             ✔ Appointment booking UI
 
             <br>
 
-            ✔ Clean user flow design
+            ✔ User-friendly navigation
 
             <br>
 
@@ -1515,22 +1590,10 @@
             <br>
 
             <b>
-                Tool Used:
+                Tool:
             </b>
 
             Figma
-
-            <br>
-            <br>
-
-            <a
-                href="https://www.figma.com/proto/0NLdLJKXBCOJsQVdLi9Fum/ClinicConnect?node-id=1-4&viewport=132%2C326%2C0.06&t=xkBs7A9qkzEE4gfU-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=134%3A76&show-proto-sidebar=1&page-id=0%3A1"
-                target="_blank"
-                class="project-link">
-
-                View Project
-
-            </a>
 
         </div>
 
@@ -1547,12 +1610,9 @@
             Let's Connect
         </h2>
 
-        <p style="color:#cbd5e1;">
-
+        <p>
             I'm always excited to collaborate or discuss opportunities.
-
         </p>
-
 
         <form id="contactForm">
 
@@ -1572,13 +1632,11 @@
 
             </div>
 
-
             <input
                 type="email"
                 id="email"
                 placeholder="Email"
                 required>
-
 
             <input
                 type="text"
@@ -1586,13 +1644,11 @@
                 placeholder="Subject"
                 required>
 
-
             <textarea
                 id="message"
-                placeholder="Message"
                 rows="5"
+                placeholder="Message"
                 required></textarea>
-
 
             <button type="submit">
                 Send Message
@@ -1604,7 +1660,6 @@
         <!-- SOCIAL LINKS -->
 
         <div class="social-links">
-
 
             <a
                 href="https://github.com/santhoshakkisetti"
@@ -1658,7 +1713,7 @@
 
     <footer>
 
-        © 2026 SANTHOSH AKKISETTI. All rights reserved.
+        © 2026 Santhosh Akkisetti. All rights reserved.
 
     </footer>
 
@@ -1669,28 +1724,32 @@
 
     <script>
 
+        /* =========================
+           CONTACT FORM
+        ========================= */
+
         document
             .getElementById("contactForm")
-            .addEventListener("submit", function (e) {
+            .addEventListener("submit", function (event) {
 
-                e.preventDefault();
+                event.preventDefault();
 
-                let firstName =
+                const firstName =
                     document.getElementById("firstName").value;
 
-                let lastName =
+                const lastName =
                     document.getElementById("lastName").value;
 
-                let email =
+                const email =
                     document.getElementById("email").value;
 
-                let subject =
+                const subject =
                     document.getElementById("subject").value;
 
-                let message =
+                const message =
                     document.getElementById("message").value;
 
-                let mailBody =
+                const body =
                     `Name: ${firstName} ${lastName}
 
 Email: ${email}
@@ -1698,16 +1757,16 @@ Email: ${email}
 Message:
 ${message}`;
 
-                let mailtoLink =
-                    `mailto:santhoshakkisetti26@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(mailBody)}`;
+                const mailto =
+                    `mailto:santhoshakkisetti26@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-                window.location.href = mailtoLink;
+                window.location.href = mailto;
 
             });
 
 
         /* =========================
-           IMAGE ERROR CHECK
+           IMAGE CHECK
         ========================= */
 
         const profileImage =
@@ -1715,14 +1774,13 @@ ${message}`;
 
         profileImage.addEventListener("error", function () {
 
-            console.log(
-                "ERROR: img.jpeg was not found."
+            console.error(
+                "Profile image not found. Make sure img.jpeg is in the same folder as index.html."
             );
 
         });
 
     </script>
-
 
 </body>
 
